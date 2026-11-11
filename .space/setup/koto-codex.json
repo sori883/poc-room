@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "plugin": "koto",
+  "product": "codex",
+  "version": "0.1.11",
+  "entries": [
+    {
+      "source": "space/default/LICENSE",
+      "destination": ".space/default/memory/LICENSE",
+      "mode": "seed",
+      "hash": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    {
+      "source": "space/default/decisions/index.md",
+      "destination": ".space/default/memory/decisions/index.md",
+      "mode": "merge-index",
+      "hash": "189126899391b6402a811c005543cf9d4aab6f3cd0c9dcec8f478373d1b513d0",
+      "indexSource": "# decisions\n"
+    },
+    {
+      "source": "space/default/index.md",
+      "destination": ".space/default/memory/index.md",
+      "mode": "merge-index",
+      "hash": "3efebaea2819f8a718a42bbf92dca3e6ac195fed9051319eebb7aa1e4e91d095",
+      "indexSource": "---\nokf_version: \"0.2\"\n---\n\n# Knowledge Base\n* [rules](rules/index.md)\n* [principles](principles/index.md)\n* [knowledge](knowledge/index.md)\n* [procedures](procedures/index.md)\n* [decisions](decisions/index.md)\n"
+    },
+    {
+      "source": "space/default/knowledge/index.md",
+      "destination": ".space/default/memory/knowledge/index.md",
+      "mode": "merge-index",
+      "hash": "342ee009844e7ad2461a07e7e253a0c9f7d737cf01225e83257d775489b74b63",
+      "indexSource": "# knowledge\n"
+    },
+    {
+      "source": "space/default/log.md",
+      "destination": ".space/default/memory/log.md",
+      "mode": "seed",
+      "hash": "69aef98562327c722427ff5d72bc733a1ce94280be7689a70272a0d7a9b41cb9"
+    },
+    {
+      "source": "space/default/principles/attack-the-premise.md",
+      "destination": ".space/default/memory/principles/attack-the-premise.md",
+      "mode": "copy",
+      "hash": "dd14a964760d4fd6c6c0c88b4a2d355d72d11fc3c619c90db98bfe535f6ce51d"
+    },
+    {
+      "source": "space/default/principles/boundary-discipline.md",
+      "destination": ".space/default/memory/principles/boundary-discipline.md",
+      "mode": "copy",
+      "hash": "29b7820d887437bb92204e82521dcaedda6284396ec7b0fc4d5ad6c1744cc01c"
+    },
+    {
+      "source": "space/default/principles/build-the-lever.md",
+      "destination": ".space/default/memory/principles/build-the-lever.md",
+      "mode": "copy",
+      "hash": "ca5ca4b57eca78040f2d67c87b71c5d4f2bd1519484f1c96779f8f097ff7a528"
+    },
+    {
+      "source": "space/default/principles/encode-lessons-in-structure.md",
+      "destination": ".space/default/memory/principles/encode-lessons-in-structure.md",
+      "mode": "copy",
+      "hash": "6c6c6a34eae4467db3604475dcfdb7621ef5869a557a12e0d390f166de66dae8"
+    },
+    {
+      "source": "space/default/principles/exhaust-the-design-space.md",
+      "destination": ".space/default/memory/principles/exhaust-the-design-space.md",
+      "mode": "copy",
+      "hash": "a2c4064c4b04b2f6900227b417c2cedd7eff56a43ab7d1cb590e7b543d924dc4"
+    },
+    {
+      "source": "space/default/principles/experience-first.md",
+      "destination": ".space/default/memory/principles/experience-first.md",
+      "mode": "copy",
+      "hash": "ac51682951385f491aa6e25ab5f2018b887050f585e7b056c4655b844a6545f5"
+    },
+    {
+      "source": "space/default/principles/fix-root-causes.md",
+      "destination": ".space/default/memory/principles/fix-root-causes.md",
+      "mode": "copy",
+      "hash": "9876d1e3494487f483b47aa8de4eb088469b56ed20fce6384ce8daa571ae3ec9"
+    },
+    {
+      "source": "space/default/principles/foundational-thinking.md",
+      "destination": ".space/default/memory/principles/foundational-thinking.md",
+      "mode": "copy",
+      "hash": "68b7aac3d74daee37ae442f193336a8f607b59254e4766f73c2fc16fc6eec4f3"
+    },
+    {
+      "source": "space/default/principles/guard-the-context-window.md",
+      "destination": ".space/default/memory/principles/guard-the-context-window.md",
+      "mode": "copy",
+      "hash": "b0703c6fe24485f9a2d29066281334cb1caaa711d9397815f202579769cd7491"
+    },
+    {
+      "source": "space/default/principles/index.md",
+      "destination": ".space/default/memory/principles/index.md",
+      "mode": "merge-index",
+      "hash": "107ae80a2ebeb30ccdf5235d22be235876a8042fcd997cdfa3508fd37dcbf82b",
+      "indexSource": "# principles\n* [最小の変更と複雑さで解決する](laziness-protocol.md) - リファクタリングや変更量を評価し、抽象化・層・引数の受け渡しを追加するとき、削除と単純化を優先して問題を解決する最小の変更を選ぶ。\n* [ロジックより先にデータと基盤を整える](foundational-thinking.md) - 中心となる型・データ構造・共有状態や基盤と機能の順序を決めるとき、ロジックの前にデータとアクセス方法を整える。\n* [新しい要件を前提に設計し直す](redesign-from-first-principles.md) - 既存設計へ新しい要件を組み込むとき、その要件が最初から存在した場合の構造を考えて段階的に反映する。\n* [修正が繰り返し失敗したら前提を疑う](attack-the-premise.md) - 同じ前提を共有する修正が同じ検証で2回以上失敗したら、前提と偏りの所在を調べてから次の修正へ進む。\n* [追加する前に不要なものを取り除く](subtract-before-you-add.md) - 機能追加・リファクタリング・書き換えの順序を決めるとき、不要なコードや指示を先に除き、観測された用途に必要な構造を作る。\n* [読み手が追う層と覚える状態を減らす](minimize-reader-load.md) - 追いにくいコードをレビューしたり、層・ラッパー・可変状態を追加したりするとき、読み手がたどる層と覚える状態を減らして値の出所を追いやすくする。\n* [検証できる最終状態へ向けて移行する](outcome-oriented-execution.md) - 段階と検証の区切りを明示した書き換え・移行を行うとき、目標の構造へ収束させ、一時的な不整合を作業単位の終わりで解消する。\n* [実装の都合より利用者の体験を優先する](experience-first.md) - 製品・UX・機能範囲を判断するとき、利用者と保守担当者の体験を優先し、機能数より中心的な体験の完成度を高める。\n* [有力な設計案を具体化して比較する](exhaust-the-design-space.md) - 前例のないUI、複数の有力な構造、操作感が重要な判断で設計が明らかでないとき、異なる2〜3案を試作または具体化して比較する。\n* [作業や検証を再実行できる道具を作る](build-the-lever.md) - 自明な少数の編集を超える編集・移行・分析・検証を行うとき、同じ作業や確認を再実行できる最小の道具を作る。\n* [ドメインの規則をデータ構造に表す](model-the-domain.md) - 状態を持つ処理、分岐が多い処理、同じデータの前提が複数箇所へ広がる処理を書くとき、規則を型・状態機械・表などに集約する。\n* [検証を境界へ集めて内部の責務を分ける](boundary-discipline.md) - 入力検証・エラー処理・CLIや通信の接続部分を設計するとき、検証と型への変換をシステム境界に集約し、内部の業務ロジックを純粋な処理に保つ。\n* [型で不正な状態と扱い漏れを防ぐ](type-system-discipline.md) - 型・関数の引数と戻り値・状態の表現を設計またはレビューするとき、不正な組み合わせを型で防ぎ、境界での解析と網羅的な分岐で実行時の失敗を減らす。\n* [再実行で同じ最終状態へ収束させる](make-operations-idempotent.md) - 停止・再起動・再試行が起こり得るコマンド、起動終了処理、ループを設計するとき、重複実行や途中失敗からも同じ最終状態へ収束させる。\n* [呼び出し元を移行して旧APIを取り除く](migrate-callers-then-delete-legacy-apis.md) - 外部への互換性が不要で呼び出し元をまとめて移行できる内部APIの刷新では、同じ改修で呼び出し元を移行し、旧APIと不要な互換層を削除する。\n* [共有状態を分離してから排他制御を考える](separate-before-serializing-shared-state.md) - 複数の処理主体が同じファイル・ブランチ・キー・状態を書き換える可能性があるとき、共有の除去を先に検討し、必要な共有だけを構造的に直列化する。\n* [成果物の実際の動作を確かめる](prove-it-works.md) - 作業の完了を報告するときや他の担当者の成果を受け入れるとき、実際の成果物・値・動作を確認し、間接的な指標や自己申告だけを成功の根拠にしない。\n* [不具合を再現して根本原因を直す](fix-root-causes.md) - 不具合や異常な挙動を調査・修正するとき、先に再現し、観測した証拠から原因を追って症状だけを隠す修正を避ける。\n* [検証できる小さな単位で作業を進める](sequence-verifiable-units.md) - 複数箇所の修正・移行・反復する編集やコミット・PRの順序を組み立てるとき、作業を確認可能な小さな単位へ分け、各単位の検証後に次へ進む。\n* [内部実装より観測できる振る舞いをテストする](test-behavior-not-implementation.md) - テストを追加・変更するときや既存テストを残すか判断するとき、利用者と同じ入口から処理を動かし、独立した期待値と観測できる結果を比較する。\n* [必要な情報に絞ってコンテキストを保つ](guard-the-context-window.md) - 大量の出力・長い文書・反復した読み込み・並行作業で情報が増えるとき、必要な情報に絞り、主担当には根拠へ戻れる要点を集める。\n* [許可された可逆的な作業を確認待ちで止めない](never-block-on-the-human.md) - 既に依頼され権限が明らかな可逆的作業について改めて実行許可を尋ねようとするとき、自律的に進め、判断が不可欠な曖昧さや未承認の操作だけを確認する。\n* [繰り返す教訓を仕組みとして定着させる](encode-lessons-in-structure.md) - 同じ指示や修正、テスト失敗が繰り返されるとき、型・lint・共通処理・実行時検証などの仕組みで再発を防ぐ。\n"
+    },
+    {
+      "source": "space/default/principles/laziness-protocol.md",
+      "destination": ".space/default/memory/principles/laziness-protocol.md",
+      "mode": "copy",
+      "hash": "f2b6e0d434845d498d1cffdc2f2bdd2f2209bc3a95b7c6e5c0f16fe436cb4000"
+    },
+    {
+      "source": "space/default/principles/make-operations-idempotent.md",
+      "destination": ".space/default/memory/principles/make-operations-idempotent.md",
+      "mode": "copy",
+      "hash": "92358b939a7352c976758b80cb44e6cac08ab3bb5ed621b7e603793aacd70483"
+    },
+    {
+      "source": "space/default/principles/migrate-callers-then-delete-legacy-apis.md",
+      "destination": ".space/default/memory/principles/migrate-callers-then-delete-legacy-apis.md",
+      "mode": "copy",
+      "hash": "2a2322e442ed728e936d4332a2257afcb28b150afb5d2f91004016c3899dfeba"
+    },
+    {
+      "source": "space/default/principles/minimize-reader-load.md",
+      "destination": ".space/default/memory/principles/minimize-reader-load.md",
+      "mode": "copy",
+      "hash": "9f2659e7a913763c3c8b22265263e8995b810d193bd2d7e1000fc9831bfd363a"
+    },
+    {
+      "source": "space/default/principles/model-the-domain.md",
+      "destination": ".space/default/memory/principles/model-the-domain.md",
+      "mode": "copy",
+      "hash": "9789a4632ba63a7153c0a700c2d425145cba352c11cb614d73594ecfeb78b98b"
+    },
+    {
+      "source": "space/default/principles/never-block-on-the-human.md",
+      "destination": ".space/default/memory/principles/never-block-on-the-human.md",
+      "mode": "copy",
+      "hash": "57b1382688285fe1a4e43c78a6d51bb218f34a2d2ea231af0d4189a4887d0006"
+    },
+    {
+      "source": "space/default/principles/outcome-oriented-execution.md",
+      "destination": ".space/default/memory/principles/outcome-oriented-execution.md",
+      "mode": "copy",
+      "hash": "1e2e81b087bc4dedb8c3b23c91e0481564a44957c9630d810186878c2b31fa16"
+    },
+    {
+      "source": "space/default/principles/prove-it-works.md",
+      "destination": ".space/default/memory/principles/prove-it-works.md",
+      "mode": "copy",
+      "hash": "151f169dc562ba2f9b0be8a60ff32b712aebfff4c12103e6660d976914307a5d"
+    },
+    {
+      "source": "space/default/principles/redesign-from-first-principles.md",
+      "destination": ".space/default/memory/principles/redesign-from-first-principles.md",
+      "mode": "copy",
+      "hash": "307cf2bc673eb8c102ace7cd5215c69fab94782f8de99ee53106ce604995882b"
+    },
+    {
+      "source": "space/default/principles/separate-before-serializing-shared-state.md",
+      "destination": ".space/default/memory/principles/separate-before-serializing-shared-state.md",
+      "mode": "copy",
+      "hash": "18c61cede3cae5a33e30271bb4d916bc33d2114d5b63c6ab6b3604d6a5a558da"
+    },
+    {
+      "source": "space/default/principles/sequence-verifiable-units.md",
+      "destination": ".space/default/memory/principles/sequence-verifiable-units.md",
+      "mode": "copy",
+      "hash": "228abbfb7797112895316d2e60f73a731d979e4e60dbdb20e36175be0e7e825e"
+    },
+    {
+      "source": "space/default/principles/subtract-before-you-add.md",
+      "destination": ".space/default/memory/principles/subtract-before-you-add.md",
+      "mode": "copy",
+      "hash": "6ba483bc87caa88891a6b026e5d692c544179bd3a83843e398be2246d1251615"
+    },
+    {
+      "source": "space/default/principles/test-behavior-not-implementation.md",
+      "destination": ".space/default/memory/principles/test-behavior-not-implementation.md",
+      "mode": "copy",
+      "hash": "fafacb5becf4dea5da4033fecbb7cbd368185897a8d5833926d5ace2ea52a88b"
+    },
+    {
+      "source": "space/default/principles/type-system-discipline.md",
+      "destination": ".space/default/memory/principles/type-system-discipline.md",
+      "mode": "copy",
+      "hash": "02b9d8aa4dc270071a3e9052ba965d66efec08f9f5ceb2ffd68f84fabeddce01"
+    },
+    {
+      "source": "space/default/procedures/index.md",
+      "destination": ".space/default/memory/procedures/index.md",
+      "mode": "merge-index",
+      "hash": "abb63dbd1d7df4c50cff33e48dce849cb0c350942b8fc21aa86e4a7a2569c52d",
+      "indexSource": "# procedures\n* [設計判断を記録してレビューする](record-design-decisions.md) - ADRに相当するdecisionの作成・更新・レビューで、判断の粒度、根拠、採用状態、後継関係を確認する。\n"
+    },
+    {
+      "source": "space/default/procedures/record-design-decisions.md",
+      "destination": ".space/default/memory/procedures/record-design-decisions.md",
+      "mode": "copy",
+      "hash": "022a9df1805ac81de6e57049ef8de6a4afd6ec5008580bda5e12462001aed2e2"
+    },
+    {
+      "source": "space/default/rules/index.md",
+      "destination": ".space/default/memory/rules/index.md",
+      "mode": "merge-index",
+      "hash": "b063d404f1417cfe60efad23a84eb7a9539b123ebc87f401aa0b7c3b86067df1",
+      "indexSource": "# rules\n"
+    },
+    {
+      "source": "templates/agents/comment-curator.toml",
+      "destination": ".codex/agents/comment-curator.toml",
+      "mode": "copy",
+      "hash": "5bc16ac1e7ad33b3f3b8a8e36f7aa91d7aaa4f7a6d59f98ebfe62431178dc753"
+    },
+    {
+      "source": "templates/agents/devlow-worker.toml",
+      "destination": ".codex/agents/devlow-worker.toml",
+      "mode": "copy",
+      "hash": "4b3c0021967081f4e1bb4e20b7aa78d22762b62d1a99a0dff81670a09130ce07"
+    },
+    {
+      "source": "templates/AGENTS.md",
+      "destination": "AGENTS.md",
+      "mode": "managed-block",
+      "hash": "508551298001f70de5a41f0dad114dd583fde24670906ac5db1c4988728d3951"
+    }
+  ]
+}
