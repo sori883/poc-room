@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectId": "default",
   "storeId": "df5eeba7-7293-4e52-b6d1-c41ae26df12c",
-  "revision": 18,
+  "revision": 20,
   "tasks": {
     "meta-astryx-homepage": {
       "id": "meta-astryx-homepage",
@@ -86,8 +86,8 @@
       "id": "aws-emulator-setup",
       "title": "AWS Emulatorのローカル実験環境を追加する",
       "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
-      "state": "running",
-      "version": 4,
+      "state": "waiting",
+      "version": 6,
       "attempt": 1,
       "dependencies": [],
       "inputs": {},
@@ -106,13 +106,20 @@
           "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
           "attempt": 1,
           "createdAt": "2026-11-12T00:41:06.685Z"
+        },
+        {
+          "id": "pull-request",
+          "ref": "https://github.com/sori883/poc-room/pull/2",
+          "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+          "attempt": 1,
+          "createdAt": "2026-11-12T00:42:49.009Z"
         }
       ],
       "result": null,
-      "reason": "",
-      "next": "",
+      "reason": "専用フォルダへの実装と実機検証が完了し、Draft PR #2を作成。mainへのマージは未実施。通常用9297は起動中、検証用9300は停止済み。",
+      "next": "PR #2のレビューとマージを確認してから管理上の完了を記録する。",
       "createdAt": "2026-11-12T00:32:40.989Z",
-      "updatedAt": "2026-11-12T00:41:06.685Z"
+      "updatedAt": "2026-11-12T00:42:49.075Z"
     }
   },
   "checkpoints": {},
@@ -812,6 +819,106 @@
           "next": "",
           "createdAt": "2026-11-12T00:32:40.989Z",
           "updatedAt": "2026-11-12T00:41:06.685Z"
+        }
+      }
+    },
+    "aws-emulator-artifact-pr-20261112": {
+      "id": "aws-emulator-artifact-pr-20261112",
+      "hash": "ba01f769b21c99904a3241aaaff1a0eef0e08f792ea8832f7b30b021d7097226",
+      "actor": "agent:codex",
+      "command": "artifact add",
+      "taskId": "aws-emulator-setup",
+      "revision": 19,
+      "at": "2026-11-12T00:42:49.009Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "running",
+          "version": 5,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            }
+          ],
+          "result": null,
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:42:49.009Z"
+        }
+      }
+    },
+    "aws-emulator-waiting-20261112": {
+      "id": "aws-emulator-waiting-20261112",
+      "hash": "cf69eb5769077ea7617f8fd1a4fa402a77b6d9951f291453f85c697e40adb9d8",
+      "actor": "agent:codex",
+      "command": "task set",
+      "taskId": "aws-emulator-setup",
+      "revision": 20,
+      "at": "2026-11-12T00:42:49.075Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "waiting",
+          "version": 6,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            }
+          ],
+          "result": null,
+          "reason": "専用フォルダへの実装と実機検証が完了し、Draft PR #2を作成。mainへのマージは未実施。通常用9297は起動中、検証用9300は停止済み。",
+          "next": "PR #2のレビューとマージを確認してから管理上の完了を記録する。",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:42:49.075Z"
         }
       }
     }
