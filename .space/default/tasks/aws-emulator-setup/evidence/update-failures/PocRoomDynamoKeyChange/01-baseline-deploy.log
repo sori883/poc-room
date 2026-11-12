@@ -1,0 +1,22 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.6s
+
+PocRoomDynamoKeyChange: start: Building PocRoomDynamoKeyChange Template
+PocRoomDynamoKeyChange: success: Built PocRoomDynamoKeyChange Template
+PocRoomDynamoKeyChange: start: Publishing PocRoomDynamoKeyChange Template (000000000000-us-east-1-8e45f9bc)
+PocRoomDynamoKeyChange: success: Published PocRoomDynamoKeyChange Template (000000000000-us-east-1-8e45f9bc)
+PocRoomDynamoKeyChange: creating CloudFormation changeset...
+PocRoomDynamoKeyChange: deploying... [1/1]
+
+✅  PocRoomDynamoKeyChange
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomDynamoKeyChange.TableName = poc-room-dynamo-key-change
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoKeyChange/355c7805-f677-5ca5-84b9-1f563c8f3c6b
+
+✨  Total time: 10.95s

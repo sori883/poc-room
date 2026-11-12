@@ -10,12 +10,14 @@ code_refs:
   - aws-emulator/cdk/app.mjs
   - aws-emulator/cdk/cdk.json
   - aws-emulator/cdk/verify.py
+  - aws-emulator/cdk/rds-rollback/app.mjs
+  - aws-emulator/cdk/update-failures/app.mjs
 sources: 
   - resource: https://docs.aws.amazon.com/emulator/latest/userguide/getting-started-docker.html
   - resource: .space/default/tasks/aws-emulator-setup/verification.md
 generated: 
   by: agent:codex
-  at: 2026-11-12T01:04:38.039Z
+  at: 2026-11-12T03:42:15.017Z
 ---
 # ローカル実験環境
 
@@ -38,3 +40,13 @@ Composeはホストのloopbackにのみ公開し、認証とTLS検証を有効�
 停止・再起動するとCDKToolkitも消えるのでbootstrapからやり直す。別ポートでも全コマンドへ同じ --port を渡す。cdk.outは共有なのでCDK操作は順に実行する。アプリはアカウント000000000000とus-east-1に固定し、HTTPSの127.0.0.1以外の接続設定を拒否する。証明書は親コマンドで設定、テレメトリーはcdk.jsonで無効にする。
 
 2026-11-12に標準bootstrap、deploy、no-changes再デプロイ、3サービスの読み書き、destroy後の物理リソース不存在を確認した。別ポート9300でも成功。Lambdaコード・コンテナイメージなどのアセットを持つアプリと実AWSは未検証。詳細は aws-emulator/cdk/README.md。
+
+## CDK更新失敗の再現範囲
+
+2026-11-12、AWS Emulator 1.0.322でCDKソースの変更だけによる更新失敗を6ケース実測した。cdk/update-failures/app.mjsは初回用のupdate=falseをtrueへ変えると各ケースを合成する。スタックを一つずつ指定して更新する。RDSのみcdk/rds-rollback/app.mjsのallocatedStorageを変更する。
+
+固定名DynamoDBテーブルのCDK IDをTableからRenamedTableへ変えるケースは、既存テーブル名との衝突でCREATE_FAILED、スタックはUPDATE_ROLLBACK_COMPLETEになった。元のTableIdと、先行するログ設定の最終保存期間7日を確認。CDK IDを元のTableに固定した対照実験では、ログ保存期間14日への更新に成功した。ログの更新成功→テーブル作成失敗→ログのロールバックというイベントも保存している。
+
+RDSとEBSの30→20 GiB、DynamoDBのGSI2個追加と主キー変更は、既存リソース更新のNotImplementedでロールバックした。実AWSのサービス制約の再現とは扱わない。RDSは30→40 GiBでも同じ未実装エラー。S3はObject LockをCDKで指定して初回成功したが設定取得APIがObjectLockConfigurationNotFoundErrorを返し、versioning停止は成功したため、この制約も検証できない。成功表示だけで指定した設定の再現を判断しない。
+
+詳細はaws-emulator/cdk/update-failures/README.md、証拠はタスクのevidence/rds-rollbackとevidence/update-failures。検証はポート9300で隔離し、全6スタックの削除とサービス一覧での不存在を確認してから環境を停止した。実AWSの操作とデータ保全・停止時間の検証は対象外。

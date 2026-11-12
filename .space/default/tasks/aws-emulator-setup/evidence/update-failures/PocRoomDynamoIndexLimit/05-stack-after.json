@@ -1,0 +1,54 @@
+{
+  "exit_code": 0,
+  "response": {
+    "Stacks": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "ChangeSetId": "arn:aws:cloudformation:us-east-1:000000000000:changeSet/cdk-deploy-change-set/840fcbad-e54e-2415-c310-14c13ce2f5ad",
+        "Parameters": [
+          {
+            "ParameterKey": "BootstrapVersion",
+            "ParameterValue": "/cdk-bootstrap/hnb659fds/version",
+            "ResolvedValue": "33"
+          }
+        ],
+        "CreationTime": "2026-11-12T03:27:21.259743+00:00",
+        "LastUpdatedTime": "2026-11-12T03:28:57.648380+00:00",
+        "RollbackConfiguration": {},
+        "StackStatus": "UPDATE_ROLLBACK_COMPLETE",
+        "StackStatusReason": "The following resource(s) failed to update: [Table]. ",
+        "DisableRollback": false,
+        "DeploymentConfig": {
+          "Mode": "STANDARD",
+          "DisableRollback": false
+        },
+        "NotificationARNs": [],
+        "Capabilities": [
+          "CAPABILITY_IAM",
+          "CAPABILITY_NAMED_IAM",
+          "CAPABILITY_AUTO_EXPAND"
+        ],
+        "Outputs": [
+          {
+            "OutputKey": "TableName",
+            "OutputValue": "poc-room-dynamo-index-limit"
+          }
+        ],
+        "RoleARN": "arn:aws:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "Tags": [],
+        "EnableTerminationProtection": false,
+        "DriftInformation": {
+          "StackDriftStatus": "NOT_CHECKED"
+        },
+        "LastOperations": [
+          {
+            "OperationType": "UPDATE_STACK",
+            "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22"
+          }
+        ]
+      }
+    ]
+  },
+  "error": ""
+}

@@ -1,0 +1,22 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:15:1
+WARNING AvailabilityZone: Avoid hardcoding availability zones 'us-east-1a' (CloudFormation Validate)
+   PocRoomEbsShrink/Volume (Volume) aws-cdk-lib.aws_ec2.CfnVolume
+   Acknowledge with 'CloudFormation-Validate::W3010'
+
+✨  Synthesis time: 0.62s
+
+PocRoomEbsShrink: start: Building PocRoomEbsShrink Template
+PocRoomEbsShrink: success: Built PocRoomEbsShrink Template
+PocRoomEbsShrink: start: Publishing PocRoomEbsShrink Template (000000000000-us-east-1-db60349d)
+PocRoomEbsShrink: success: Published PocRoomEbsShrink Template (000000000000-us-east-1-db60349d)
+PocRoomEbsShrink: creating CloudFormation changeset...
+PocRoomEbsShrink: deploying... [1/1]
+PocRoomEbsShrink | UPDATE_FAILED | AWS::EC2::Volume | Volume NotImplemented: this emulator does not change the properties of an existing AWS::EC2::Volume in place; the resource was left as it is.
+❌  PocRoomEbsShrink failed to deploy
+‣ DeploymentError: Resource updates failed:
+PocRoomEbsShrink/Volume  (AWS::EC2::Volume Volume)
+  NotImplemented: this emulator does not change the properties of an existing AWS::EC2::Volume in place; the resource was
+  left as it is.
+Source Location: file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:15: (file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:15:1)
+                 ...node internals...

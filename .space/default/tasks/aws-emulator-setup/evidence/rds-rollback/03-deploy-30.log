@@ -1,0 +1,31 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING MasterUserPassword: Property 'MasterUserPassword' should not be a hardcoded string - use a parameter with NoEcho or a dynamic reference (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Acknowledge with 'CloudFormation-Validate::W2501'
+
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING StorageEncrypted: RDS instance should have StorageEncrypted set to true (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Suggested fix: Set StorageEncrypted to true
+   Acknowledge with 'CloudFormation-Validate::W9008'
+
+✨  Synthesis time: 0.55s
+
+PocRoomRdsRollback: start: Building PocRoomRdsRollback Template
+PocRoomRdsRollback: success: Built PocRoomRdsRollback Template
+PocRoomRdsRollback: start: Publishing PocRoomRdsRollback Template (000000000000-us-east-1-5929523f)
+PocRoomRdsRollback: success: Published PocRoomRdsRollback Template (000000000000-us-east-1-5929523f)
+PocRoomRdsRollback: creating CloudFormation changeset...
+PocRoomRdsRollback: deploying... [1/1]
+
+✅  PocRoomRdsRollback
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomRdsRollback.DatabaseIdentifier = poc-room-rds-rollback
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomRdsRollback/3dd99cc9-a03d-8759-2f0f-1f62202e0aa9
+
+✨  Total time: 10.89s

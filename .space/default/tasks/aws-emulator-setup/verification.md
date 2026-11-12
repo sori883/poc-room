@@ -70,3 +70,28 @@ Node.js 24.22.1、CDK CLI 2.1148.1（fcf5e34）、aws-cdk-lib 2.276.0、construc
 AWS EmulatorやCDK本体へのパッチ、独自のCloudFormation実装は不要だった。S3バケットを空にするLambdaカスタムリソースも追加していない。検証は自分で書き込んだデータだけを削除し、利用者が追加したS3オブジェクトはdestroy前に利用者が整理する。
 
 Lambdaコード・コンテナイメージなどのアセットを持つアプリ、実際のAWSへのデプロイは未検証。通常用9297にはCDKスタックを再デプロイした状態で引き渡し、9300は停止する。PR #2を更新し、マージ待ちとして記録する。
+
+## CDKの更新失敗の追加検証（2026-11-12）
+
+同じAWS Emulator 1.0.322で、CDKのソース変更だけによる更新失敗を6ケース検証した。検証開始時には9297が停止していたため、その状態を保ち、9300に専用環境を起動した。手動でのリソース変更、障害注入、外部通知の抑止は行っていない。
+
+詳細な結果と再現手順は `aws-emulator/cdk/update-failures/README.md`。実行ログ、生成したテンプレート、CloudFormationイベントとサービスAPI応答は [evidence/rds-rollback/](evidence/rds-rollback/) と [evidence/update-failures/](evidence/update-failures/) に保存した。
+
+| ケース | 初回 / synth / 更新の終了コード | 結果 |
+| --- | --- | --- |
+| RDS 30→20 GiB | 0 / 0 / 1 | in-place更新のNotImplementedでUPDATE_ROLLBACK_COMPLETE。30 GiBと同じDbiResourceIdを保持 |
+| EBS 30→20 GiB | 0 / 0 / 1 | in-place更新のNotImplementedでUPDATE_ROLLBACK_COMPLETE。30 GiBを保持 |
+| DynamoDBのGSIを2個追加 | 0 / 0 / 1 | in-place更新のNotImplementedでUPDATE_ROLLBACK_COMPLETE。GSIは作成されない |
+| 固定名DynamoDBの主キー変更 | 0 / 0 / 1 | in-place更新のNotImplementedでUPDATE_ROLLBACK_COMPLETE。主キーはid |
+| S3 Object Lock指定バケットのversioning停止 | 0 / 0 / 0 | 初回の設定確認でObjectLockConfigurationNotFoundError。更新後はUPDATE_COMPLETE / Suspended。前提が再現されていない |
+| 固定名DynamoDBのCDK ID変更 | 0 / 0 / 1 | RenamedTableがalready exists in stackでCREATE_FAILED。UPDATE_ROLLBACK_COMPLETE、元のTableIdとログ保存期間7日を確認 |
+
+RDSのテンプレート差分はAllocatedStorageの30→20だけ。対照実験として30→40へ増やしても同じ未実装エラーになったため、実AWSの縮小制約を再現したとは判定していない。容量は30のままで、CloudFormationのテンプレートもロールバック後は30へ戻っている。
+
+CDK ID変更のケースでは、LogsのUPDATE_COMPLETE、RenamedTableのCREATE_FAILED、UPDATE_ROLLBACK_IN_PROGRESS、Logsの再更新、UPDATE_ROLLBACK_COMPLETEの順序を記録した。APIで確認した最終retentionInDaysは7。更新中の一瞬の14日という値をポーリングで直接観測したわけではない。対照実験ではテーブルIDをTableに固定し、同じ保存期間変更を成功させ、UPDATE_COMPLETE、実値14日、初回と同じTableIdを確認した。失敗はログ設定変更ではなくテーブル名の衝突によるものと切り分けた。
+
+S3の初回API記録の収集中にGetObjectLockConfigurationが非ゼロを返したため、その一括収集は途中で停止した。EBSの初回スナップショットだけが保存されている。S3のエラーは更新後にも個別に再確認して保存し、DynamoDBの他2ケースも更新後の実リソースとイベントを保存した。これら3ケースについて、保存していない初回API応答との全項目比較は行っていない。
+
+生成テンプレート、イベント、API応答を照合するアサーションを実行し、記録した判定と一致した。両CDKアプリのJavaScript構文も確認した。通常の3サービスサンプルには変更を加えていない。
+
+全6スタックをCDK destroyで削除した後、RDS・EBS・DynamoDB・CloudWatch Logsの一覧が空、S3はbootstrap用バケットだけであることを確認した。続けて9300を停止・削除した。ソースは初回用（update=false、RDS容量30）へ戻してある。実AWSへの操作とデータプレーンの耐久性検証は行っていない。

@@ -1,0 +1,25 @@
+AI agent detected
+[WARNING] aws-cdk-lib.CfnResource#addDependency is deprecated, and will be removed in the next major release.
+  Use `addResourceDependency` instead.
+
+
+✨  Synthesis time: 0.7s
+
+PocRoomLogicalIdRename: start: Building PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: success: Built PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: start: Publishing PocRoomLogicalIdRename Template (000000000000-us-east-1-8c982321)
+PocRoomLogicalIdRename: success: Published PocRoomLogicalIdRename Template (000000000000-us-east-1-8c982321)
+PocRoomLogicalIdRename: creating CloudFormation changeset...
+PocRoomLogicalIdRename: deploying... [1/1]
+
+✅  PocRoomLogicalIdRename
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomLogicalIdRename.LogGroupName = PocRoomLogicalIdRename-Logs-FB873CF79718
+PocRoomLogicalIdRename.TableName = poc-room-logical-id-rename
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomLogicalIdRename/faecc00c-560e-e931-f626-81be5b22c1ca
+
+✨  Total time: 11.04s

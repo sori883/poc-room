@@ -1,0 +1,5 @@
+AI agent detected
+[WARNING] aws-cdk-lib.CfnResource#addDependency is deprecated, and will be removed in the next major release.
+  Use `addResourceDependency` instead.
+
+85 feature flags are not configured. Run 'cdk flags --unstable=flags' to learn more.

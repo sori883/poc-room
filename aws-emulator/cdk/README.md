@@ -64,3 +64,7 @@ npm --prefix cdk ci
 Apple Silicon / AWS Emulator 1.0.322 / CDK CLI 2.1148.1 / aws-cdk-lib 2.276.0で、標準のbootstrap、デプロイ、再デプロイ、API操作、削除を確認しました。Lambdaコードやコンテナイメージなどのアセットを持つアプリは今回の対象外です。対応範囲は[公式の互換性説明](https://docs.aws.amazon.com/emulator/latest/userguide/fidelity.html)を確認してください。
 
 通常のAWSへのデプロイの仕組みは[CDK公式ドキュメント](https://docs.aws.amazon.com/cdk/v2/guide/deploy.html)を参照してください。このサンプルの実行先はローカルです。
+
+## 更新失敗とロールバックの実験
+
+[更新デプロイの検証](update-failures/README.md)では、CDKのソース変更だけで失敗するケースを試せます。固定名テーブルのCDK ID変更による名前衝突とロールバックを確認しています。RDS・EBS・DynamoDBの一部の変更は未実装エラーとなり、S3 Object Lockには設定の再現不足があったため、実AWSの制約を確認できたケースと分けて記録しています。

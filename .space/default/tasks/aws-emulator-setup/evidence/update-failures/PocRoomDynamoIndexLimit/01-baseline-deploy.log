@@ -1,0 +1,22 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.59s
+
+PocRoomDynamoIndexLimit: start: Building PocRoomDynamoIndexLimit Template
+PocRoomDynamoIndexLimit: success: Built PocRoomDynamoIndexLimit Template
+PocRoomDynamoIndexLimit: start: Publishing PocRoomDynamoIndexLimit Template (000000000000-us-east-1-5888b819)
+PocRoomDynamoIndexLimit: success: Published PocRoomDynamoIndexLimit Template (000000000000-us-east-1-5888b819)
+PocRoomDynamoIndexLimit: creating CloudFormation changeset...
+PocRoomDynamoIndexLimit: deploying... [1/1]
+
+✅  PocRoomDynamoIndexLimit
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomDynamoIndexLimit.TableName = poc-room-dynamo-index-limit
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7
+
+✨  Total time: 10.95s

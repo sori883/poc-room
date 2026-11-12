@@ -1,0 +1,54 @@
+{
+  "exit_code": 0,
+  "response": {
+    "Stacks": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "StackName": "PocRoomEbsShrink",
+        "ChangeSetId": "arn:aws:cloudformation:us-east-1:000000000000:changeSet/cdk-deploy-change-set/4240650f-68ff-ddf2-9d60-ef0ce5aae594",
+        "Parameters": [
+          {
+            "ParameterKey": "BootstrapVersion",
+            "ParameterValue": "/cdk-bootstrap/hnb659fds/version",
+            "ResolvedValue": "33"
+          }
+        ],
+        "CreationTime": "2026-11-12T03:26:58.588693+00:00",
+        "LastUpdatedTime": "2026-11-12T03:28:32.848819+00:00",
+        "RollbackConfiguration": {},
+        "StackStatus": "UPDATE_ROLLBACK_COMPLETE",
+        "StackStatusReason": "The following resource(s) failed to update: [Volume]. ",
+        "DisableRollback": false,
+        "DeploymentConfig": {
+          "Mode": "STANDARD",
+          "DisableRollback": false
+        },
+        "NotificationARNs": [],
+        "Capabilities": [
+          "CAPABILITY_IAM",
+          "CAPABILITY_NAMED_IAM",
+          "CAPABILITY_AUTO_EXPAND"
+        ],
+        "Outputs": [
+          {
+            "OutputKey": "VolumeId",
+            "OutputValue": "vol-00000000000000080"
+          }
+        ],
+        "RoleARN": "arn:aws:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "Tags": [],
+        "EnableTerminationProtection": false,
+        "DriftInformation": {
+          "StackDriftStatus": "NOT_CHECKED"
+        },
+        "LastOperations": [
+          {
+            "OperationType": "UPDATE_STACK",
+            "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22"
+          }
+        ]
+      }
+    ]
+  },
+  "error": ""
+}

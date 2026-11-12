@@ -1,0 +1,135 @@
+{
+  "exit_code": 0,
+  "response": {
+    "StackEvents": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "baca0aec-d1f3-e5fe-85be-aea0e2368cf5",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "e8ae59fe-5324-b5bd-d5fb-16c6d39c2aef",
+        "LogicalResourceId": "PocRoomObjectLockSuspend",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:45.768379+00:00",
+        "ResourceStatus": "UPDATE_COMPLETE",
+        "ClientRequestToken": "exec6d1800cd-617e-4360-ab6c-5b930e21f566"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "ff111eca-7018-a114-4d28-63ba9fb0fc58",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "e8ae59fe-5324-b5bd-d5fb-16c6d39c2aef",
+        "LogicalResourceId": "Bucket",
+        "PhysicalResourceId": "poc-room-object-lock-update",
+        "ResourceType": "AWS::S3::Bucket",
+        "Timestamp": "2026-11-12T03:28:45.518379+00:00",
+        "ResourceStatus": "UPDATE_COMPLETE",
+        "ResourceProperties": "{\"BucketName\":\"poc-room-object-lock-update\",\"ObjectLockConfiguration\":{\"ObjectLockEnabled\":\"Enabled\"},\"ObjectLockEnabled\":true,\"VersioningConfiguration\":{\"Status\":\"Suspended\"}}",
+        "ClientRequestToken": "exec6d1800cd-617e-4360-ab6c-5b930e21f566"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "c0bc4789-869a-1433-5bdc-e44146408c4e",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "e8ae59fe-5324-b5bd-d5fb-16c6d39c2aef",
+        "LogicalResourceId": "Bucket",
+        "ResourceType": "AWS::S3::Bucket",
+        "Timestamp": "2026-11-12T03:28:45.268379+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceProperties": "{\"BucketName\":\"poc-room-object-lock-update\",\"ObjectLockConfiguration\":{\"ObjectLockEnabled\":\"Enabled\"},\"ObjectLockEnabled\":true,\"VersioningConfiguration\":{\"Status\":\"Enabled\"}}",
+        "ClientRequestToken": "exec6d1800cd-617e-4360-ab6c-5b930e21f566"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "c01e3335-9c51-ed3e-eb73-50b9705b16ae",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "e8ae59fe-5324-b5bd-d5fb-16c6d39c2aef",
+        "LogicalResourceId": "PocRoomObjectLockSuspend",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:45.268379+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "exec6d1800cd-617e-4360-ab6c-5b930e21f566"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "6196cb77-9528-3497-6a78-dd5afd31da8e",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "a89ff215-0105-3886-0c5c-820907a59597",
+        "LogicalResourceId": "PocRoomObjectLockSuspend",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:15.670788+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ClientRequestToken": "exec45b5391c-afaf-4464-91c3-bceb44ac0f68"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "8fd5f334-d6f6-a8de-c62c-a7f734b60f5c",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "a89ff215-0105-3886-0c5c-820907a59597",
+        "LogicalResourceId": "Bucket",
+        "PhysicalResourceId": "poc-room-object-lock-update",
+        "ResourceType": "AWS::S3::Bucket",
+        "Timestamp": "2026-11-12T03:27:15.420788+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ResourceProperties": "{\"BucketName\":\"poc-room-object-lock-update\",\"ObjectLockConfiguration\":{\"ObjectLockEnabled\":\"Enabled\"},\"ObjectLockEnabled\":true,\"VersioningConfiguration\":{\"Status\":\"Enabled\"}}",
+        "ClientRequestToken": "exec45b5391c-afaf-4464-91c3-bceb44ac0f68"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "f023facf-a9f8-e84e-0f67-5804b511f45a",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "a89ff215-0105-3886-0c5c-820907a59597",
+        "LogicalResourceId": "Bucket",
+        "PhysicalResourceId": "poc-room-object-lock-update",
+        "ResourceType": "AWS::S3::Bucket",
+        "Timestamp": "2026-11-12T03:27:15.170789+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "Resource creation Initiated",
+        "ResourceProperties": "{\"BucketName\":\"poc-room-object-lock-update\",\"ObjectLockConfiguration\":{\"ObjectLockEnabled\":\"Enabled\"},\"ObjectLockEnabled\":true,\"VersioningConfiguration\":{\"Status\":\"Enabled\"}}",
+        "ClientRequestToken": "exec45b5391c-afaf-4464-91c3-bceb44ac0f68"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "c1409970-294b-fa14-3b69-db78075bd927",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "a89ff215-0105-3886-0c5c-820907a59597",
+        "LogicalResourceId": "Bucket",
+        "PhysicalResourceId": "",
+        "ResourceType": "AWS::S3::Bucket",
+        "Timestamp": "2026-11-12T03:27:15.170788+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceProperties": "{\"BucketName\":\"poc-room-object-lock-update\",\"ObjectLockConfiguration\":{\"ObjectLockEnabled\":\"Enabled\"},\"ObjectLockEnabled\":true,\"VersioningConfiguration\":{\"Status\":\"Enabled\"}}",
+        "ClientRequestToken": "exec45b5391c-afaf-4464-91c3-bceb44ac0f68"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "00b64cdf-3688-1f64-c9ee-0b5ca09cc2a7",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "a89ff215-0105-3886-0c5c-820907a59597",
+        "LogicalResourceId": "PocRoomObjectLockSuspend",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:15.170788+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "exec45b5391c-afaf-4464-91c3-bceb44ac0f68"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "EventId": "566fef83-f585-bdb2-379f-fb8e9f9a4785",
+        "StackName": "PocRoomObjectLockSuspend",
+        "OperationId": "166c3ccf-7e1e-a3da-3138-19fbf88bb49f",
+        "LogicalResourceId": "PocRoomObjectLockSuspend",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:09.964408+00:00",
+        "ResourceStatus": "REVIEW_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated"
+      }
+    ]
+  },
+  "error": ""
+}

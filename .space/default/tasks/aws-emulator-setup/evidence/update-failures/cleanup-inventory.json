@@ -1,0 +1,27 @@
+{
+  "rds": {
+    "DBInstances": []
+  },
+  "ebs": {
+    "Volumes": []
+  },
+  "dynamodb": {
+    "TableNames": []
+  },
+  "s3": {
+    "Buckets": [
+      {
+        "Name": "cdk-hnb659fds-assets-000000000000-us-east-1",
+        "CreationDate": "2026-11-12T03:20:51+00:00",
+        "BucketArn": "arn:aws:s3:::cdk-hnb659fds-assets-000000000000-us-east-1"
+      }
+    ],
+    "Owner": {
+      "ID": "f7b11509f4d675c3c44f0dd37ca830bb02e8cfa58f04c46283c4bfcbdce1ff45"
+    },
+    "Prefix": null
+  },
+  "logs": {
+    "logGroups": []
+  }
+}

@@ -1,0 +1,11 @@
+AI agent detected
+PocRoomEbsShrink: destroying... [1/5]
+✅  PocRoomEbsShrink: destroyed
+PocRoomObjectLockSuspend: destroying... [2/5]
+✅  PocRoomObjectLockSuspend: destroyed
+PocRoomDynamoIndexLimit: destroying... [3/5]
+✅  PocRoomDynamoIndexLimit: destroyed
+PocRoomDynamoKeyChange: destroying... [4/5]
+✅  PocRoomDynamoKeyChange: destroyed
+PocRoomLogicalIdRename: destroying... [5/5]
+✅  PocRoomLogicalIdRename: destroyed

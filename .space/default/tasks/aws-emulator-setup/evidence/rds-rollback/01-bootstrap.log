@@ -1,0 +1,7 @@
+AI agent detected
+ ⏳  Bootstrapping environment aws://000000000000/us-east-1...
+Trusted accounts for deployment: (none)
+Trusted accounts for lookup: (none)
+Using default execution policy of 'arn:aws:iam::aws:policy/AdministratorAccess'. Pass '--cloudformation-execution-policies' to customize.
+CDKToolkit: creating CloudFormation changeset...
+✅  Environment aws://000000000000/us-east-1 bootstrapped.
