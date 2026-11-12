@@ -1,0 +1,19 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.62s
+
+PocRoomDynamoKeyChange: start: Building PocRoomDynamoKeyChange Template
+PocRoomDynamoKeyChange: success: Built PocRoomDynamoKeyChange Template
+PocRoomDynamoKeyChange: start: Publishing PocRoomDynamoKeyChange Template (000000000000-us-east-1-30c28527)
+PocRoomDynamoKeyChange: success: Published PocRoomDynamoKeyChange Template (000000000000-us-east-1-30c28527)
+PocRoomDynamoKeyChange: creating CloudFormation changeset...
+PocRoomDynamoKeyChange: deploying... [1/1]
+PocRoomDynamoKeyChange | UPDATE_FAILED | AWS::DynamoDB::Table | Table NotImplemented: this emulator does not change the properties of an existing AWS::DynamoDB::Table in place; the resource was left as it is.
+❌  PocRoomDynamoKeyChange failed to deploy
+‣ DeploymentError: Resource updates failed:
+PocRoomDynamoKeyChange/Table  (AWS::DynamoDB::Table Table)
+  NotImplemented: this emulator does not change the properties of an existing AWS::DynamoDB::Table in place; the resource
+  was left as it is.
+Source Location: file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:53: (file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:53:2)
+                 ...node internals...

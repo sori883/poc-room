@@ -1,0 +1,6 @@
+{
+    "Identifier": "poc-room-rds-rollback",
+    "Status": "available",
+    "Storage": 30,
+    "ResourceId": "db-00000000000000000000000001"
+}

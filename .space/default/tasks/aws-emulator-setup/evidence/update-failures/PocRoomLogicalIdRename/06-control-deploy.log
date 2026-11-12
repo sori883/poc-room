@@ -1,0 +1,23 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.71s
+
+PocRoomLogicalIdRename: start: Building PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: success: Built PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: start: Publishing PocRoomLogicalIdRename Template (000000000000-us-east-1-b37e5b86)
+PocRoomLogicalIdRename: success: Published PocRoomLogicalIdRename Template (000000000000-us-east-1-b37e5b86)
+PocRoomLogicalIdRename: creating CloudFormation changeset...
+PocRoomLogicalIdRename: deploying... [1/1]
+
+✅  PocRoomLogicalIdRename
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomLogicalIdRename.LogGroupName = PocRoomLogicalIdRename-Logs-FB873CF79718
+PocRoomLogicalIdRename.TableName = poc-room-logical-id-rename
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomLogicalIdRename/faecc00c-560e-e931-f626-81be5b22c1ca
+
+✨  Total time: 11.06s

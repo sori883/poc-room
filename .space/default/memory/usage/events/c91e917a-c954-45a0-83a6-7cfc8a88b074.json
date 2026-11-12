@@ -1,0 +1,1 @@
+{"schema_version":1,"id":"c91e917a-c954-45a0-83a6-7cfc8a88b074","at":"2026-11-12T00:32:50.854Z","project":"default","operation":"show","actor":"agent:codex","source":"devlow","concept_ids":["principles/make-operations-idempotent"],"task_id":"aws-emulator-setup","content_hash":"92358b939a7352c976758b80cb44e6cac08ab3bb5ed621b7e603793aacd70483"}

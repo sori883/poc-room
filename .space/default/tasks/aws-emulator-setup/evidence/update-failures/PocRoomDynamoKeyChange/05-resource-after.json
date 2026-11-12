@@ -1,0 +1,46 @@
+{
+  "exit_code": 0,
+  "response": {
+    "Table": {
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "id",
+          "AttributeType": "S"
+        }
+      ],
+      "TableName": "poc-room-dynamo-key-change",
+      "KeySchema": [
+        {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+        }
+      ],
+      "TableStatus": "ACTIVE",
+      "CreationDateTime": "2026-11-12T12:27:37.819273+09:00",
+      "ProvisionedThroughput": {
+        "NumberOfDecreasesToday": 0,
+        "ReadCapacityUnits": 0,
+        "WriteCapacityUnits": 0
+      },
+      "TableSizeBytes": 0,
+      "ItemCount": 0,
+      "TableArn": "arn:aws:dynamodb:us-east-1:000000000000:table/poc-room-dynamo-key-change",
+      "TableId": "f80a88aa-6dbd-4240-bc31-1612fbde5eeb",
+      "BillingModeSummary": {
+        "BillingMode": "PAY_PER_REQUEST",
+        "LastUpdateToPayPerRequestDateTime": "2026-11-12T12:27:37.819273+09:00"
+      },
+      "DeletionProtectionEnabled": false,
+      "OnDemandThroughput": {
+        "MaxReadRequestUnits": -1,
+        "MaxWriteRequestUnits": -1
+      },
+      "WarmThroughput": {
+        "ReadUnitsPerSecond": 12000,
+        "WriteUnitsPerSecond": 4000,
+        "Status": "ACTIVE"
+      }
+    }
+  },
+  "error": ""
+}

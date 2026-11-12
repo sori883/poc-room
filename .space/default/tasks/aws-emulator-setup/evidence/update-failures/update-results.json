@@ -1,0 +1,18 @@
+{
+  "PocRoomEbsShrink": {
+    "synth": 0,
+    "deploy": 1
+  },
+  "PocRoomObjectLockSuspend": {
+    "synth": 0,
+    "deploy": 0
+  },
+  "PocRoomDynamoIndexLimit": {
+    "synth": 0,
+    "deploy": 1
+  },
+  "PocRoomDynamoKeyChange": {
+    "synth": 0,
+    "deploy": 1
+  }
+}

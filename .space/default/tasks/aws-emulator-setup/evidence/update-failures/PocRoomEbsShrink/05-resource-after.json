@@ -1,0 +1,44 @@
+{
+  "exit_code": 0,
+  "response": {
+    "Volumes": [
+      {
+        "AvailabilityZoneId": "use1-az1",
+        "Iops": 3000,
+        "Tags": [
+          {
+            "Key": "aws:cloudformation:stack-name",
+            "Value": "PocRoomEbsShrink"
+          },
+          {
+            "Key": "aws:cloudformation:stack-id",
+            "Value": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932"
+          },
+          {
+            "Key": "aws:cloudformation:logical-id",
+            "Value": "Volume"
+          }
+        ],
+        "VolumeType": "gp3",
+        "FastRestored": false,
+        "MultiAttachEnabled": false,
+        "Throughput": 125,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:000000000000:volume/vol-00000000000000080",
+        "OwnerId": "000000000000",
+        "VolumeId": "vol-00000000000000080",
+        "Size": 30,
+        "SnapshotId": "",
+        "AvailabilityZone": "us-east-1a",
+        "State": "available",
+        "CreateTime": "2026-11-12T03:27:03.832309+00:00",
+        "Attachments": [],
+        "Encrypted": false
+      }
+    ]
+  },
+  "error": ""
+}

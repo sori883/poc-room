@@ -1,0 +1,1 @@
+{"schema_version":1,"id":"1b347ee6-2ffe-4c96-8273-6cb3039ed4d7","at":"2026-11-12T00:32:50.923Z","project":"default","operation":"show","actor":"agent:codex","source":"devlow","concept_ids":["principles/never-block-on-the-human"],"task_id":"aws-emulator-setup","content_hash":"57b1382688285fe1a4e43c78a6d51bb218f34a2d2ea231af0d4189a4887d0006"}

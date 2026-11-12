@@ -1,0 +1,53 @@
+{
+  "exit_code": 0,
+  "response": {
+    "Stacks": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504",
+        "StackName": "PocRoomObjectLockSuspend",
+        "ChangeSetId": "arn:aws:cloudformation:us-east-1:000000000000:changeSet/cdk-deploy-change-set/94f5bdd8-cb7f-e89b-beef-7520095cacbf",
+        "Parameters": [
+          {
+            "ParameterKey": "BootstrapVersion",
+            "ParameterValue": "/cdk-bootstrap/hnb659fds/version",
+            "ResolvedValue": "33"
+          }
+        ],
+        "CreationTime": "2026-11-12T03:27:09.964408+00:00",
+        "LastUpdatedTime": "2026-11-12T03:28:45.268379+00:00",
+        "RollbackConfiguration": {},
+        "StackStatus": "UPDATE_COMPLETE",
+        "DisableRollback": false,
+        "DeploymentConfig": {
+          "Mode": "STANDARD",
+          "DisableRollback": false
+        },
+        "NotificationARNs": [],
+        "Capabilities": [
+          "CAPABILITY_IAM",
+          "CAPABILITY_NAMED_IAM",
+          "CAPABILITY_AUTO_EXPAND"
+        ],
+        "Outputs": [
+          {
+            "OutputKey": "BucketName",
+            "OutputValue": "poc-room-object-lock-update"
+          }
+        ],
+        "RoleARN": "arn:aws:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "Tags": [],
+        "EnableTerminationProtection": false,
+        "DriftInformation": {
+          "StackDriftStatus": "NOT_CHECKED"
+        },
+        "LastOperations": [
+          {
+            "OperationType": "UPDATE_STACK",
+            "OperationId": "e8ae59fe-5324-b5bd-d5fb-16c6d39c2aef"
+          }
+        ]
+      }
+    ]
+  },
+  "error": ""
+}

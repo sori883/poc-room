@@ -1,0 +1,6 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:15:1
+WARNING AvailabilityZone: Avoid hardcoding availability zones 'us-east-1a' (CloudFormation Validate)
+   PocRoomEbsShrink/Volume (Volume) aws-cdk-lib.aws_ec2.CfnVolume
+   Acknowledge with 'CloudFormation-Validate::W3010'
+85 feature flags are not configured. Run 'cdk flags --unstable=flags' to learn more.

@@ -1,0 +1,6 @@
+{
+  "app": "node app.mjs",
+  "versionReporting": false,
+  "analyticsReporting": false,
+  "notices": false
+}

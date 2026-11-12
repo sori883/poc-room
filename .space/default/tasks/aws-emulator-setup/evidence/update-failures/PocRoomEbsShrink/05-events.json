@@ -1,0 +1,150 @@
+{
+  "exit_code": 0,
+  "response": {
+    "StackEvents": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "4e6a4dd8-6cf3-1aad-d00e-5094d6791dcc",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:33.349540+00:00",
+        "ResourceStatus": "UPDATE_ROLLBACK_COMPLETE",
+        "ResourceStatusReason": "The following resource(s) failed to update: [Volume]. ",
+        "ClientRequestToken": "execdab4038c-60f1-4dd3-ac53-b785a686b367"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "4833c144-ae4b-6f4f-3504-232ae235e473",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:32.849540+00:00",
+        "ResourceStatus": "UPDATE_ROLLBACK_IN_PROGRESS",
+        "ResourceStatusReason": "The following resource(s) failed to update: [Volume]. ",
+        "ClientRequestToken": "execdab4038c-60f1-4dd3-ac53-b785a686b367"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "5b522fd7-0680-a85a-c59b-5fc491e66aba",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22",
+        "LogicalResourceId": "Volume",
+        "PhysicalResourceId": "vol-00000000000000080",
+        "ResourceType": "AWS::EC2::Volume",
+        "Timestamp": "2026-11-12T03:28:32.849540+00:00",
+        "ResourceStatus": "UPDATE_FAILED",
+        "ResourceStatusReason": "NotImplemented: this emulator does not change the properties of an existing AWS::EC2::Volume in place; the resource was left as it is.",
+        "ResourceProperties": "{\"AvailabilityZone\":\"us-east-1a\",\"Size\":30,\"VolumeType\":\"gp3\"}",
+        "ClientRequestToken": "execdab4038c-60f1-4dd3-ac53-b785a686b367"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "1af34b47-7c8e-8edf-de92-4602eb902c72",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22",
+        "LogicalResourceId": "Volume",
+        "ResourceType": "AWS::EC2::Volume",
+        "Timestamp": "2026-11-12T03:28:32.848819+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceProperties": "{\"AvailabilityZone\":\"us-east-1a\",\"Size\":30,\"VolumeType\":\"gp3\"}",
+        "ClientRequestToken": "execdab4038c-60f1-4dd3-ac53-b785a686b367"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "19661a93-f3f5-0d5c-8bea-7584e58cd553",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "375745f4-ad5b-8791-1e14-e6d657035a22",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:32.848819+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "execdab4038c-60f1-4dd3-ac53-b785a686b367"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "7cbcdeee-da5c-6a90-de9e-405ac2a3dd2b",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:05.848176+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ClientRequestToken": "exec572ad2c4-182c-4bc1-9a6f-5fb3bc5d3459"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "879849a3-4a75-971b-d0d1-fa1daaae458e",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12",
+        "LogicalResourceId": "Volume",
+        "PhysicalResourceId": "vol-00000000000000080",
+        "ResourceType": "AWS::EC2::Volume",
+        "Timestamp": "2026-11-12T03:27:05.848176+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ResourceProperties": "{\"AvailabilityZone\":\"us-east-1a\",\"Size\":30,\"VolumeType\":\"gp3\"}",
+        "ClientRequestToken": "exec572ad2c4-182c-4bc1-9a6f-5fb3bc5d3459"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "0f788729-4284-3996-e1c0-bc44621a62fd",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12",
+        "LogicalResourceId": "Volume",
+        "PhysicalResourceId": "vol-00000000000000080",
+        "ResourceType": "AWS::EC2::Volume",
+        "Timestamp": "2026-11-12T03:27:03.830623+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "Resource creation Initiated",
+        "ResourceProperties": "{\"AvailabilityZone\":\"us-east-1a\",\"Size\":30,\"VolumeType\":\"gp3\"}",
+        "ClientRequestToken": "exec572ad2c4-182c-4bc1-9a6f-5fb3bc5d3459"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "9c3302da-ee47-d231-bd3b-fb7c8f823b8c",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12",
+        "LogicalResourceId": "Volume",
+        "PhysicalResourceId": "",
+        "ResourceType": "AWS::EC2::Volume",
+        "Timestamp": "2026-11-12T03:27:03.830622+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceProperties": "{\"AvailabilityZone\":\"us-east-1a\",\"Size\":30,\"VolumeType\":\"gp3\"}",
+        "ClientRequestToken": "exec572ad2c4-182c-4bc1-9a6f-5fb3bc5d3459"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "6396b68f-1f7f-1829-6205-e2a8a79dad99",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:03.830622+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "exec572ad2c4-182c-4bc1-9a6f-5fb3bc5d3459"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "EventId": "ea772009-c887-cf08-2bba-e35cfc6c1f01",
+        "StackName": "PocRoomEbsShrink",
+        "OperationId": "f61281f7-5867-dd4d-4f90-38d5cbfa738e",
+        "LogicalResourceId": "PocRoomEbsShrink",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:26:58.588693+00:00",
+        "ResourceStatus": "REVIEW_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated"
+      }
+    ]
+  },
+  "error": ""
+}

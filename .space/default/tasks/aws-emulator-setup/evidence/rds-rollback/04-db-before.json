@@ -1,0 +1,9 @@
+{
+    "Identifier": "poc-room-rds-rollback",
+    "Status": "available",
+    "Storage": 30,
+    "StorageType": "gp3",
+    "Engine": "postgres",
+    "ResourceId": "db-00000000000000000000000001",
+    "Arn": "arn:aws:rds:us-east-1:000000000000:db:poc-room-rds-rollback"
+}

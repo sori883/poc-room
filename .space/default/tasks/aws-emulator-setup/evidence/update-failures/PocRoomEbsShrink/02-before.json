@@ -1,0 +1,87 @@
+{
+  "stack": {
+    "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932",
+    "StackName": "PocRoomEbsShrink",
+    "ChangeSetId": "arn:aws:cloudformation:us-east-1:000000000000:changeSet/cdk-deploy-change-set/39a6544f-cdee-004e-a0b5-b13bfea07c55",
+    "Parameters": [
+      {
+        "ParameterKey": "BootstrapVersion",
+        "ParameterValue": "/cdk-bootstrap/hnb659fds/version",
+        "ResolvedValue": "33"
+      }
+    ],
+    "CreationTime": "2026-11-12T03:26:58.588693+00:00",
+    "LastUpdatedTime": "2026-11-12T03:27:03.830622+00:00",
+    "RollbackConfiguration": {},
+    "StackStatus": "CREATE_COMPLETE",
+    "DisableRollback": false,
+    "DeploymentConfig": {
+      "Mode": "STANDARD",
+      "DisableRollback": false
+    },
+    "NotificationARNs": [],
+    "Capabilities": [
+      "CAPABILITY_IAM",
+      "CAPABILITY_NAMED_IAM",
+      "CAPABILITY_AUTO_EXPAND"
+    ],
+    "Outputs": [
+      {
+        "OutputKey": "VolumeId",
+        "OutputValue": "vol-00000000000000080"
+      }
+    ],
+    "RoleARN": "arn:aws:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+    "Tags": [],
+    "EnableTerminationProtection": false,
+    "DriftInformation": {
+      "StackDriftStatus": "NOT_CHECKED"
+    },
+    "LastOperations": [
+      {
+        "OperationType": "CREATE_STACK",
+        "OperationId": "cdcb2b85-1ba0-e771-9f67-7176b3cbdd12"
+      }
+    ]
+  },
+  "resource": {
+    "Volumes": [
+      {
+        "AvailabilityZoneId": "use1-az1",
+        "Iops": 3000,
+        "Tags": [
+          {
+            "Key": "aws:cloudformation:stack-name",
+            "Value": "PocRoomEbsShrink"
+          },
+          {
+            "Key": "aws:cloudformation:stack-id",
+            "Value": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932"
+          },
+          {
+            "Key": "aws:cloudformation:logical-id",
+            "Value": "Volume"
+          }
+        ],
+        "VolumeType": "gp3",
+        "FastRestored": false,
+        "MultiAttachEnabled": false,
+        "Throughput": 125,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:000000000000:volume/vol-00000000000000080",
+        "OwnerId": "000000000000",
+        "VolumeId": "vol-00000000000000080",
+        "Size": 30,
+        "SnapshotId": "",
+        "AvailabilityZone": "us-east-1a",
+        "State": "available",
+        "CreateTime": "2026-11-12T03:27:03.832309+00:00",
+        "Attachments": [],
+        "Encrypted": false
+      }
+    ]
+  }
+}

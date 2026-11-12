@@ -1,0 +1,10 @@
+{
+    "Id": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomRdsRollback/3dd99cc9-a03d-8759-2f0f-1f62202e0aa9",
+    "Status": "CREATE_COMPLETE",
+    "Outputs": [
+        {
+            "OutputKey": "DatabaseIdentifier",
+            "OutputValue": "poc-room-rds-rollback"
+        }
+    ]
+}

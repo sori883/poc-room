@@ -1,0 +1,21 @@
+AI agent detected
+[WARNING] aws-cdk-lib.CfnResource#addDependency is deprecated, and will be removed in the next major release.
+  Use `addResourceDependency` instead.
+
+
+✨  Synthesis time: 0.6s
+
+PocRoomLogicalIdRename: start: Building PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: success: Built PocRoomLogicalIdRename Template
+PocRoomLogicalIdRename: start: Publishing PocRoomLogicalIdRename Template (000000000000-us-east-1-251d5b0e)
+PocRoomLogicalIdRename: success: Published PocRoomLogicalIdRename Template (000000000000-us-east-1-251d5b0e)
+PocRoomLogicalIdRename: creating CloudFormation changeset...
+PocRoomLogicalIdRename: deploying... [1/1]
+PocRoomLogicalIdRename | CREATE_FAILED | AWS::DynamoDB::Table | RenamedTable poc-room-logical-id-rename already exists in stack arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomLogicalIdRename/faecc00c-560e-e931-f626-81be5b22c1ca
+❌  PocRoomLogicalIdRename failed to deploy
+‣ DeploymentError: Resource updates failed:
+PocRoomLogicalIdRename/RenamedTable  (AWS::DynamoDB::Table RenamedTable)
+  poc-room-logical-id-rename already exists in stack
+  arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomLogicalIdRename/faecc00c-560e-e931-f626-81be5b22c1ca
+Source Location: file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:67: (file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:67:2)
+                 ...node internals...

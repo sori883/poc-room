@@ -1,0 +1,19 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.62s
+
+PocRoomDynamoIndexLimit: start: Building PocRoomDynamoIndexLimit Template
+PocRoomDynamoIndexLimit: success: Built PocRoomDynamoIndexLimit Template
+PocRoomDynamoIndexLimit: start: Publishing PocRoomDynamoIndexLimit Template (000000000000-us-east-1-6e580581)
+PocRoomDynamoIndexLimit: success: Published PocRoomDynamoIndexLimit Template (000000000000-us-east-1-6e580581)
+PocRoomDynamoIndexLimit: creating CloudFormation changeset...
+PocRoomDynamoIndexLimit: deploying... [1/1]
+PocRoomDynamoIndexLimit | UPDATE_FAILED | AWS::DynamoDB::Table | Table NotImplemented: this emulator does not change the properties of an existing AWS::DynamoDB::Table in place; the resource was left as it is.
+❌  PocRoomDynamoIndexLimit failed to deploy
+‣ DeploymentError: Resource updates failed:
+PocRoomDynamoIndexLimit/Table  (AWS::DynamoDB::Table Table)
+  NotImplemented: this emulator does not change the properties of an existing AWS::DynamoDB::Table in place; the resource
+  was left as it is.
+Source Location: file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:35: (file:///Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:35:1)
+                 ...node internals...

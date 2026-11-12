@@ -1,0 +1,22 @@
+AI agent detected
+
+
+✨  Synthesis time: 0.59s
+
+PocRoomObjectLockSuspend: start: Building PocRoomObjectLockSuspend Template
+PocRoomObjectLockSuspend: success: Built PocRoomObjectLockSuspend Template
+PocRoomObjectLockSuspend: start: Publishing PocRoomObjectLockSuspend Template (000000000000-us-east-1-c999c69a)
+PocRoomObjectLockSuspend: success: Published PocRoomObjectLockSuspend Template (000000000000-us-east-1-c999c69a)
+PocRoomObjectLockSuspend: creating CloudFormation changeset...
+PocRoomObjectLockSuspend: deploying... [1/1]
+
+✅  PocRoomObjectLockSuspend
+
+✨  Deployment time: 5.04s
+
+Outputs:
+PocRoomObjectLockSuspend.BucketName = poc-room-object-lock-update
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomObjectLockSuspend/605f5dd4-6c93-65e1-d207-18b3fe34f504
+
+✨  Total time: 10.91s

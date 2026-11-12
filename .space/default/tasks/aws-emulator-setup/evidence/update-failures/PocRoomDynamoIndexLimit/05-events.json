@@ -1,0 +1,150 @@
+{
+  "exit_code": 0,
+  "response": {
+    "StackEvents": [
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "e1586a65-8e81-5da6-7587-7318f1068842",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:58.149193+00:00",
+        "ResourceStatus": "UPDATE_ROLLBACK_COMPLETE",
+        "ResourceStatusReason": "The following resource(s) failed to update: [Table]. ",
+        "ClientRequestToken": "execb1aea0bb-e7af-486b-8a66-5881570ded44"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "fb1ac105-aabe-2fe3-c30f-173787f51842",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:57.649193+00:00",
+        "ResourceStatus": "UPDATE_ROLLBACK_IN_PROGRESS",
+        "ResourceStatusReason": "The following resource(s) failed to update: [Table]. ",
+        "ClientRequestToken": "execb1aea0bb-e7af-486b-8a66-5881570ded44"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "e4f3b8e7-20c8-a240-c1e1-c15bb7c1c59c",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22",
+        "LogicalResourceId": "Table",
+        "PhysicalResourceId": "poc-room-dynamo-index-limit",
+        "ResourceType": "AWS::DynamoDB::Table",
+        "Timestamp": "2026-11-12T03:28:57.649193+00:00",
+        "ResourceStatus": "UPDATE_FAILED",
+        "ResourceStatusReason": "NotImplemented: this emulator does not change the properties of an existing AWS::DynamoDB::Table in place; the resource was left as it is.",
+        "ResourceProperties": "{\"AttributeDefinitions\":[{\"AttributeName\":\"id\",\"AttributeType\":\"S\"}],\"BillingMode\":\"PAY_PER_REQUEST\",\"KeySchema\":[{\"AttributeName\":\"id\",\"KeyType\":\"HASH\"}],\"TableName\":\"poc-room-dynamo-index-limit\"}",
+        "ClientRequestToken": "execb1aea0bb-e7af-486b-8a66-5881570ded44"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "86587033-5499-1688-9842-0f114d444ede",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22",
+        "LogicalResourceId": "Table",
+        "ResourceType": "AWS::DynamoDB::Table",
+        "Timestamp": "2026-11-12T03:28:57.648380+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceProperties": "{\"AttributeDefinitions\":[{\"AttributeName\":\"id\",\"AttributeType\":\"S\"}],\"BillingMode\":\"PAY_PER_REQUEST\",\"KeySchema\":[{\"AttributeName\":\"id\",\"KeyType\":\"HASH\"}],\"TableName\":\"poc-room-dynamo-index-limit\"}",
+        "ClientRequestToken": "execb1aea0bb-e7af-486b-8a66-5881570ded44"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "ce757fce-9391-235f-614f-b7c7d4a70127",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "cb8e732c-1945-4b2a-be44-1c19701b4a22",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:28:57.648380+00:00",
+        "ResourceStatus": "UPDATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "execb1aea0bb-e7af-486b-8a66-5881570ded44"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "8d2e5ab9-bc07-427d-dad5-b6625a5b8b2d",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "3ad11004-7b31-531f-18a9-4347da290db2",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:26.997223+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ClientRequestToken": "exec452060f4-bafc-4d96-960d-f8788dd3b4d4"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "dd53cb1e-a567-9993-7673-aad5a3c38aec",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "3ad11004-7b31-531f-18a9-4347da290db2",
+        "LogicalResourceId": "Table",
+        "PhysicalResourceId": "poc-room-dynamo-index-limit",
+        "ResourceType": "AWS::DynamoDB::Table",
+        "Timestamp": "2026-11-12T03:27:26.747223+00:00",
+        "ResourceStatus": "CREATE_COMPLETE",
+        "ResourceProperties": "{\"AttributeDefinitions\":[{\"AttributeName\":\"id\",\"AttributeType\":\"S\"}],\"BillingMode\":\"PAY_PER_REQUEST\",\"KeySchema\":[{\"AttributeName\":\"id\",\"KeyType\":\"HASH\"}],\"TableName\":\"poc-room-dynamo-index-limit\"}",
+        "ClientRequestToken": "exec452060f4-bafc-4d96-960d-f8788dd3b4d4"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "939baf2d-94a2-ea11-5b86-feddac738118",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "3ad11004-7b31-531f-18a9-4347da290db2",
+        "LogicalResourceId": "Table",
+        "PhysicalResourceId": "poc-room-dynamo-index-limit",
+        "ResourceType": "AWS::DynamoDB::Table",
+        "Timestamp": "2026-11-12T03:27:26.497224+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "Resource creation Initiated",
+        "ResourceProperties": "{\"AttributeDefinitions\":[{\"AttributeName\":\"id\",\"AttributeType\":\"S\"}],\"BillingMode\":\"PAY_PER_REQUEST\",\"KeySchema\":[{\"AttributeName\":\"id\",\"KeyType\":\"HASH\"}],\"TableName\":\"poc-room-dynamo-index-limit\"}",
+        "ClientRequestToken": "exec452060f4-bafc-4d96-960d-f8788dd3b4d4"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "8b42b4b6-120b-66a6-a9f6-77b4fde46d43",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "3ad11004-7b31-531f-18a9-4347da290db2",
+        "LogicalResourceId": "Table",
+        "PhysicalResourceId": "",
+        "ResourceType": "AWS::DynamoDB::Table",
+        "Timestamp": "2026-11-12T03:27:26.497223+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceProperties": "{\"AttributeDefinitions\":[{\"AttributeName\":\"id\",\"AttributeType\":\"S\"}],\"BillingMode\":\"PAY_PER_REQUEST\",\"KeySchema\":[{\"AttributeName\":\"id\",\"KeyType\":\"HASH\"}],\"TableName\":\"poc-room-dynamo-index-limit\"}",
+        "ClientRequestToken": "exec452060f4-bafc-4d96-960d-f8788dd3b4d4"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "308e318f-3eb1-99d0-1796-9728ac0691a5",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "3ad11004-7b31-531f-18a9-4347da290db2",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:26.497223+00:00",
+        "ResourceStatus": "CREATE_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated",
+        "ClientRequestToken": "exec452060f4-bafc-4d96-960d-f8788dd3b4d4"
+      },
+      {
+        "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "EventId": "5fe01660-b350-4ab0-8063-c80696abea04",
+        "StackName": "PocRoomDynamoIndexLimit",
+        "OperationId": "190ec692-6438-6fe3-c4fb-b35c0ab08595",
+        "LogicalResourceId": "PocRoomDynamoIndexLimit",
+        "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomDynamoIndexLimit/7aefad68-0fb7-9dae-2f60-a135386326c7",
+        "ResourceType": "AWS::CloudFormation::Stack",
+        "Timestamp": "2026-11-12T03:27:21.259743+00:00",
+        "ResourceStatus": "REVIEW_IN_PROGRESS",
+        "ResourceStatusReason": "User Initiated"
+      }
+    ]
+  },
+  "error": ""
+}

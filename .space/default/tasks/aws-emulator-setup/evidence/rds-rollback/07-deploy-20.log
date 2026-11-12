@@ -1,0 +1,28 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING MasterUserPassword: Property 'MasterUserPassword' should not be a hardcoded string - use a parameter with NoEcho or a dynamic reference (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Acknowledge with 'CloudFormation-Validate::W2501'
+
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING StorageEncrypted: RDS instance should have StorageEncrypted set to true (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Suggested fix: Set StorageEncrypted to true
+   Acknowledge with 'CloudFormation-Validate::W9008'
+
+✨  Synthesis time: 0.71s
+
+PocRoomRdsRollback: start: Building PocRoomRdsRollback Template
+PocRoomRdsRollback: success: Built PocRoomRdsRollback Template
+PocRoomRdsRollback: start: Publishing PocRoomRdsRollback Template (000000000000-us-east-1-ede567d3)
+PocRoomRdsRollback: success: Published PocRoomRdsRollback Template (000000000000-us-east-1-ede567d3)
+PocRoomRdsRollback: creating CloudFormation changeset...
+PocRoomRdsRollback: deploying... [1/1]
+PocRoomRdsRollback | UPDATE_FAILED | AWS::RDS::DBInstance | Database NotImplemented: this emulator does not change the properties of an existing AWS::RDS::DBInstance in place; the resource was left as it is.
+❌  PocRoomRdsRollback failed to deploy
+‣ DeploymentError: Resource updates failed:
+PocRoomRdsRollback/Database  (AWS::RDS::DBInstance Database)
+  NotImplemented: this emulator does not change the properties of an existing AWS::RDS::DBInstance in place; the resource
+  was left as it is.
+Source Location: file:///Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13: (file:///Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1)
+                 ...node internals...

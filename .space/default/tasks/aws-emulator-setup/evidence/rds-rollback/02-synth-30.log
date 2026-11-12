@@ -1,0 +1,12 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING MasterUserPassword: Property 'MasterUserPassword' should not be a hardcoded string - use a parameter with NoEcho or a dynamic reference (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Acknowledge with 'CloudFormation-Validate::W2501'
+
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/rds-rollback/app.mjs:13:1
+WARNING StorageEncrypted: RDS instance should have StorageEncrypted set to true (CloudFormation Validate)
+   PocRoomRdsRollback/Database (Database) aws-cdk-lib.aws_rds.CfnDBInstance
+   Suggested fix: Set StorageEncrypted to true
+   Acknowledge with 'CloudFormation-Validate::W9008'
+85 feature flags are not configured. Run 'cdk flags --unstable=flags' to learn more.

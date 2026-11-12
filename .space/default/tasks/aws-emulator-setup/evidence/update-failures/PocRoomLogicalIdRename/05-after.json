@@ -1,0 +1,110 @@
+{
+  "stack": {
+    "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomLogicalIdRename/faecc00c-560e-e931-f626-81be5b22c1ca",
+    "StackName": "PocRoomLogicalIdRename",
+    "ChangeSetId": "arn:aws:cloudformation:us-east-1:000000000000:changeSet/cdk-deploy-change-set/d7da20f0-5029-be74-9ccd-9df8b0cdd407",
+    "Parameters": [
+      {
+        "ParameterKey": "BootstrapVersion",
+        "ParameterValue": "/cdk-bootstrap/hnb659fds/version",
+        "ResolvedValue": "33"
+      }
+    ],
+    "CreationTime": "2026-11-12T03:31:07.040325+00:00",
+    "LastUpdatedTime": "2026-11-12T03:31:41.157871+00:00",
+    "RollbackConfiguration": {},
+    "StackStatus": "UPDATE_ROLLBACK_COMPLETE",
+    "StackStatusReason": "The following resource(s) failed to create: [RenamedTable]. ",
+    "DisableRollback": false,
+    "DeploymentConfig": {
+      "Mode": "STANDARD",
+      "DisableRollback": false
+    },
+    "NotificationARNs": [],
+    "Capabilities": [
+      "CAPABILITY_IAM",
+      "CAPABILITY_NAMED_IAM",
+      "CAPABILITY_AUTO_EXPAND"
+    ],
+    "Outputs": [
+      {
+        "OutputKey": "TableName",
+        "OutputValue": "poc-room-logical-id-rename"
+      },
+      {
+        "OutputKey": "LogGroupName",
+        "OutputValue": "PocRoomLogicalIdRename-Logs-FB873CF79718"
+      }
+    ],
+    "RoleARN": "arn:aws:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+    "Tags": [],
+    "EnableTerminationProtection": false,
+    "DriftInformation": {
+      "StackDriftStatus": "NOT_CHECKED"
+    },
+    "LastOperations": [
+      {
+        "OperationType": "UPDATE_STACK",
+        "OperationId": "cf870cc7-09e2-4a53-80c3-602dc438859a"
+      }
+    ]
+  },
+  "table": {
+    "Table": {
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "id",
+          "AttributeType": "S"
+        }
+      ],
+      "TableName": "poc-room-logical-id-rename",
+      "KeySchema": [
+        {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+        }
+      ],
+      "TableStatus": "ACTIVE",
+      "CreationDateTime": "2026-11-12T12:31:12.256928+09:00",
+      "ProvisionedThroughput": {
+        "NumberOfDecreasesToday": 0,
+        "ReadCapacityUnits": 0,
+        "WriteCapacityUnits": 0
+      },
+      "TableSizeBytes": 0,
+      "ItemCount": 0,
+      "TableArn": "arn:aws:dynamodb:us-east-1:000000000000:table/poc-room-logical-id-rename",
+      "TableId": "4dbaa655-421c-4dc5-b0c9-b5b52c4c5d19",
+      "BillingModeSummary": {
+        "BillingMode": "PAY_PER_REQUEST",
+        "LastUpdateToPayPerRequestDateTime": "2026-11-12T12:31:12.256928+09:00"
+      },
+      "DeletionProtectionEnabled": false,
+      "OnDemandThroughput": {
+        "MaxReadRequestUnits": -1,
+        "MaxWriteRequestUnits": -1
+      },
+      "WarmThroughput": {
+        "ReadUnitsPerSecond": 12000,
+        "WriteUnitsPerSecond": 4000,
+        "Status": "ACTIVE"
+      }
+    }
+  },
+  "logs": {
+    "logGroups": [
+      {
+        "logGroupName": "PocRoomLogicalIdRename-Logs-FB873CF79718",
+        "creationTime": 1794454272255,
+        "retentionInDays": 7,
+        "metricFilterCount": 0,
+        "arn": "arn:aws:logs:us-east-1:000000000000:log-group:PocRoomLogicalIdRename-Logs-FB873CF79718:*",
+        "storedBytes": 0,
+        "logGroupClass": "STANDARD",
+        "logGroupArn": "arn:aws:logs:us-east-1:000000000000:log-group:PocRoomLogicalIdRename-Logs-FB873CF79718",
+        "deletionProtectionEnabled": false,
+        "bearerTokenAuthenticationEnabled": false
+      }
+    ]
+  }
+}

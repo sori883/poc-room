@@ -1,0 +1,66 @@
+{
+ "Description": "Local RDS storage reduction and update rollback experiment",
+ "Resources": {
+  "Database": {
+   "Type": "AWS::RDS::DBInstance",
+   "Properties": {
+    "AllocatedStorage": "40",
+    "BackupRetentionPeriod": 0,
+    "DBInstanceClass": "db.t3.micro",
+    "DBInstanceIdentifier": "poc-room-rds-rollback",
+    "DeletionProtection": false,
+    "Engine": "postgres",
+    "MasterUserPassword": "LocalEmulatorOnly42",
+    "MasterUsername": "emulatoruser",
+    "PubliclyAccessible": false,
+    "StorageType": "gp3"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "PocRoomRdsRollback/Database"
+   }
+  }
+ },
+ "Outputs": {
+  "DatabaseIdentifier": {
+   "Value": {
+    "Ref": "Database"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

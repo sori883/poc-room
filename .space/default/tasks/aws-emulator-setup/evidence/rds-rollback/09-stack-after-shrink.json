@@ -1,0 +1,5 @@
+{
+    "Id": "arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomRdsRollback/3dd99cc9-a03d-8759-2f0f-1f62202e0aa9",
+    "Status": "UPDATE_ROLLBACK_COMPLETE",
+    "Reason": "The following resource(s) failed to update: [Database]. "
+}

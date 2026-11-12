@@ -1,0 +1,25 @@
+AI agent detected
+file:/Users/const/sori883/poc-room/aws-emulator/cdk/update-failures/app.mjs:15:1
+WARNING AvailabilityZone: Avoid hardcoding availability zones 'us-east-1a' (CloudFormation Validate)
+   PocRoomEbsShrink/Volume (Volume) aws-cdk-lib.aws_ec2.CfnVolume
+   Acknowledge with 'CloudFormation-Validate::W3010'
+
+✨  Synthesis time: 0.74s
+
+PocRoomEbsShrink: start: Building PocRoomEbsShrink Template
+PocRoomEbsShrink: success: Built PocRoomEbsShrink Template
+PocRoomEbsShrink: start: Publishing PocRoomEbsShrink Template (000000000000-us-east-1-a9a82aae)
+PocRoomEbsShrink: success: Published PocRoomEbsShrink Template (000000000000-us-east-1-a9a82aae)
+PocRoomEbsShrink: creating CloudFormation changeset...
+PocRoomEbsShrink: deploying... [1/1]
+
+✅  PocRoomEbsShrink
+
+✨  Deployment time: 5.05s
+
+Outputs:
+PocRoomEbsShrink.VolumeId = vol-00000000000000080
+Stack ARN:
+arn:aws:cloudformation:us-east-1:000000000000:stack/PocRoomEbsShrink/a7d6f1c9-3ad8-ced7-6ab2-abf3ea4c3932
+
+✨  Total time: 11.11s
