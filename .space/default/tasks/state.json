@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectId": "default",
   "storeId": "df5eeba7-7293-4e52-b6d1-c41ae26df12c",
-  "revision": 14,
+  "revision": 18,
   "tasks": {
     "meta-astryx-homepage": {
       "id": "meta-astryx-homepage",
@@ -81,6 +81,38 @@
       "next": "タスクの管理上の完了指定があれば、直接pushと検証の結果を残して完了する。",
       "createdAt": "2026-11-10T10:28:11.426Z",
       "updatedAt": "2026-11-10T10:34:27.881Z"
+    },
+    "aws-emulator-setup": {
+      "id": "aws-emulator-setup",
+      "title": "AWS Emulatorのローカル実験環境を追加する",
+      "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+      "state": "running",
+      "version": 4,
+      "attempt": 1,
+      "dependencies": [],
+      "inputs": {},
+      "workspace": null,
+      "artifacts": [
+        {
+          "id": "local-setup",
+          "ref": "aws-emulator/README.md",
+          "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+          "attempt": 1,
+          "createdAt": "2026-11-12T00:40:48.586Z"
+        },
+        {
+          "id": "verification",
+          "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+          "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+          "attempt": 1,
+          "createdAt": "2026-11-12T00:41:06.685Z"
+        }
+      ],
+      "result": null,
+      "reason": "",
+      "next": "",
+      "createdAt": "2026-11-12T00:32:40.989Z",
+      "updatedAt": "2026-11-12T00:41:06.685Z"
     }
   },
   "checkpoints": {},
@@ -645,6 +677,141 @@
           "next": "タスクの管理上の完了指定があれば、直接pushと検証の結果を残して完了する。",
           "createdAt": "2026-11-10T10:28:11.426Z",
           "updatedAt": "2026-11-10T10:34:27.881Z"
+        }
+      }
+    },
+    "aws-emulator-add-20261112": {
+      "id": "aws-emulator-add-20261112",
+      "hash": "11e97b861538ee97709773c52166059d87e19f465e2a9e84668def83f23e4e50",
+      "actor": "agent:codex",
+      "command": "task add",
+      "taskId": "aws-emulator-setup",
+      "revision": 15,
+      "at": "2026-11-12T00:32:40.989Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "pending",
+          "version": 1,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": null,
+          "workspace": null,
+          "artifacts": [],
+          "result": null,
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:32:40.989Z"
+        }
+      }
+    },
+    "aws-emulator-start-20261112": {
+      "id": "aws-emulator-start-20261112",
+      "hash": "c0711566ee07f9f2458dc565d46952d4e0842b4b1b2dc7cfa4d603ae1dfb331c",
+      "actor": "agent:codex",
+      "command": "task start",
+      "taskId": "aws-emulator-setup",
+      "revision": 16,
+      "at": "2026-11-12T00:32:50.646Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "running",
+          "version": 2,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [],
+          "result": null,
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:32:50.646Z"
+        }
+      }
+    },
+    "aws-emulator-artifact-local-20261112": {
+      "id": "aws-emulator-artifact-local-20261112",
+      "hash": "8417093bbf07104bfeec520ac8fba84eb5051dc1e8891cf0fce93646be6532f2",
+      "actor": "agent:codex",
+      "command": "artifact add",
+      "taskId": "aws-emulator-setup",
+      "revision": 17,
+      "at": "2026-11-12T00:40:48.586Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "running",
+          "version": 3,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            }
+          ],
+          "result": null,
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:40:48.586Z"
+        }
+      }
+    },
+    "aws-emulator-artifact-verification-20261112": {
+      "id": "aws-emulator-artifact-verification-20261112",
+      "hash": "6252069bbef70fc4c27c6105251fdc256f19dd51e35097ebec14c250638f4345",
+      "actor": "agent:codex",
+      "command": "artifact add",
+      "taskId": "aws-emulator-setup",
+      "revision": 18,
+      "at": "2026-11-12T00:41:06.685Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "running",
+          "version": 4,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            }
+          ],
+          "result": null,
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:41:06.685Z"
         }
       }
     }

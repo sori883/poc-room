@@ -1,0 +1,13 @@
+services:
+  emulator:
+    build:
+      context: .
+    user: "${EMULATOR_UID:?Use ./emulator}:${EMULATOR_GID:?Use ./emulator}"
+    command: ["--port", "${AWS_EMULATOR_PORT:-9297}"]
+    ports:
+      - "127.0.0.1:${AWS_EMULATOR_PORT:-9297}:${AWS_EMULATOR_PORT:-9297}"
+    volumes:
+      - ./.runtime:/home/emulator/.aws/emulator
+    mem_limit: 2g
+    memswap_limit: 2g
+    stop_grace_period: 10s

@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+"""AWS Emulatorを、このフォルダ専用の設定で操作する。"""
+
+import argparse
+import hashlib
+import os
+from pathlib import Path
+import shutil
+import ssl
+import subprocess
+import sys
+import time
+import urllib.error
+import urllib.request
+
+
+ROOT = Path(__file__).resolve().parent
+
+
+def require(command):
+    if not shutil.which(command):
+        raise RuntimeError(f"{command} が必要です。README.md の準備手順を確認してください。")
+
+
+def run(command, **kwargs):
+    return subprocess.run(command, check=True, **kwargs)
+
+
+class Emulator:
+    def __init__(self, port):
+        self.port = port
+        self.endpoint = f"https://127.0.0.1:{port}"
+        self.files = ROOT / ".runtime" / str(port)
+        identity = hashlib.sha256(str(ROOT).encode()).hexdigest()[:8]
+        self.project = f"poc-room-emulator-{identity}-{port}"
+
+    def compose(self, *args, **kwargs):
+        require("docker")
+        env = os.environ.copy()
+        env.update(
+            AWS_EMULATOR_PORT=str(self.port),
+            EMULATOR_UID=str(os.getuid()),
+            EMULATOR_GID=str(os.getgid()),
+        )
+        return run(
+            ["docker", "compose", "--project-name", self.project,
+             "--file", str(ROOT / "compose.yaml"), *args],
+            cwd=ROOT, env=env, **kwargs,
+        )
+
+    def healthy(self):
+        if not all((self.files / name).is_file()
+                   for name in ("ca.pem", "config", "emulator_credentials")):
+            return False
+        try:
+            context = ssl.create_default_context(cafile=str(self.files / "ca.pem"))
+            opener = urllib.request.build_opener(
+                urllib.request.ProxyHandler({}),
+                urllib.request.HTTPSHandler(context=context),
+            )
+            with opener.open(f"{self.endpoint}/__admin/health", timeout=2) as response:
+                return response.status == 200 and response.read().strip() == b"ok"
+        except (OSError, ValueError, urllib.error.URLError):
+            return False
+
+    def environment(self):
+        if not self.healthy():
+            raise RuntimeError(f"{self.endpoint} に接続できません。先に ./emulator up を実行してください。")
+        env = {key: value for key, value in os.environ.items() if not key.startswith("AWS_")}
+        ca = str(self.files / "ca.pem")
+        env.update(
+            AWS_ENDPOINT_URL=self.endpoint,
+            AWS_SHARED_CREDENTIALS_FILE=str(self.files / "emulator_credentials"),
+            AWS_CONFIG_FILE=str(self.files / "config"),
+            AWS_CA_BUNDLE=ca,
+            AWS_EC2_METADATA_DISABLED="true",
+            AWS_DISABLE_HOST_PREFIX_INJECTION="true",
+            AWS_REGION="us-east-1",
+            AWS_DEFAULT_REGION="us-east-1",
+            AWS_PAGER="",
+            AWS_CLI_AUTO_PROMPT="off",
+            AWS_MAX_ATTEMPTS="2",
+            NODE_EXTRA_CA_CERTS=ca,
+        )
+        for key in ("NO_PROXY", "no_proxy"):
+            env[key] = ",".join(filter(None, [env.get(key), "127.0.0.1", "localhost"]))
+        return env
+
+    def up(self):
+        (ROOT / ".runtime").mkdir(mode=0o700, exist_ok=True)
+        self.compose("up", "--detach")
+        deadline = time.monotonic() + 45
+        while time.monotonic() < deadline:
+            if self.healthy():
+                require("aws")
+                result = run(
+                    ["aws", "sts", "get-caller-identity", "--query", "Account", "--output", "text"],
+                    env=self.environment(), capture_output=True, text=True,
+                )
+                if result.stdout.strip() != "000000000000":
+                    raise RuntimeError("エミュレーターのアカウントを確認できませんでした。")
+                print(f"AWS Emulator 起動済み: {self.endpoint} (account: 000000000000)")
+                return
+            time.sleep(1)
+        self.compose("logs", "--tail", "30")
+        raise RuntimeError("45秒以内に起動を確認できませんでした。./emulator logs で確認してください。")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--port", type=int, default=os.environ.get("AWS_EMULATOR_PORT", "9297"))
+    commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("up", help="起動し、HTTPSとローカルアカウントを確認")
+    commands.add_parser("down", help="停止してコンテナを削除（実験データは消えます）")
+    commands.add_parser("build", help="公式LTSパッケージを取得してイメージを再作成")
+    commands.add_parser("status", help="接続状態を確認")
+    commands.add_parser("logs", help="直近の起動・APIログを表示")
+    commands.add_parser("version", help="起動中のエミュレーターのバージョンを表示")
+    for name in ("aws", "run"):
+        command = commands.add_parser(name, help="ローカル接続設定でコマンドを実行")
+        command.add_argument("args", nargs=argparse.REMAINDER)
+    demo = commands.add_parser("demo", help="S3・DynamoDB・SQSの実操作を検証")
+    demo.add_argument("service", choices=("all", "s3", "dynamodb", "sqs"), default="all", nargs="?")
+    args = parser.parse_args()
+    if not 1024 <= args.port <= 65535:
+        parser.error("port は1024〜65535で指定してください。")
+    emulator = Emulator(args.port)
+    if args.command == "up":
+        require("aws")
+        emulator.up()
+    elif args.command == "down":
+        emulator.compose("down")
+    elif args.command == "build":
+        emulator.compose("build", "--pull", "--no-cache")
+    elif args.command == "status":
+        if not emulator.healthy():
+            raise RuntimeError(f"停止中、または接続できません: {emulator.endpoint}")
+        print(f"稼働中: {emulator.endpoint}")
+    elif args.command == "logs":
+        emulator.compose("logs", "--tail", "100")
+    elif args.command == "version":
+        emulator.compose("exec", "-T", "emulator", "aws-emulator", "--version")
+    elif args.command == "demo":
+        require("aws")
+        run([sys.executable, str(ROOT / "examples" / "smoke.py"), args.service],
+            env=emulator.environment())
+    else:
+        if not args.args:
+            parser.error(f"{args.command} に実行するコマンドを指定してください。")
+        command = (["aws"] if args.command == "aws" else []) + args.args
+        require(command[0])
+        run(command, env=emulator.environment())
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (RuntimeError, OSError) as error:
+        print(f"エラー: {error}", file=sys.stderr)
+        sys.exit(1)
+    except subprocess.CalledProcessError as error:
+        if error.stderr:
+            print(error.stderr, file=sys.stderr)
+        sys.exit(error.returncode)
+    except KeyboardInterrupt:
+        sys.exit(130)
