@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectId": "default",
   "storeId": "df5eeba7-7293-4e52-b6d1-c41ae26df12c",
-  "revision": 20,
+  "revision": 23,
   "tasks": {
     "meta-astryx-homepage": {
       "id": "meta-astryx-homepage",
@@ -85,9 +85,9 @@
     "aws-emulator-setup": {
       "id": "aws-emulator-setup",
       "title": "AWS Emulatorのローカル実験環境を追加する",
-      "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
-      "state": "waiting",
-      "version": 6,
+      "description": "poc-room直下のaws-emulator/に公式Docker版とCLIサンプルを配置済み。追加依頼によりcdk/にS3・DynamoDB・SQSを定義し、ローカルへのCDK deploy、作成したリソースのAPI往復、CDK destroyと削除を実際に検証する。既存の接続設定分離と別ポート動作を保つ。管理root=/Users/const/sori883/poc-room、project=default、ブランチcodex/aws-emulator-setup、PR #2、統合先origin/main。PRを更新し、マージ状態を実態どおり記録する。",
+      "state": "running",
+      "version": 9,
       "attempt": 1,
       "dependencies": [],
       "inputs": {},
@@ -113,13 +113,20 @@
           "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
           "attempt": 1,
           "createdAt": "2026-11-12T00:42:49.009Z"
+        },
+        {
+          "id": "cdk-playground",
+          "ref": "aws-emulator/cdk/README.md",
+          "description": "標準CDK bootstrap・deploy・API検証・destroyを確認。9297と9300で成功。CDK CLI 2.1148.1 / aws-cdk-lib 2.276.0。9297にはスタックを再デプロイ済み。",
+          "attempt": 1,
+          "createdAt": "2026-11-12T01:04:38.210Z"
         }
       ],
       "result": null,
-      "reason": "専用フォルダへの実装と実機検証が完了し、Draft PR #2を作成。mainへのマージは未実施。通常用9297は起動中、検証用9300は停止済み。",
-      "next": "PR #2のレビューとマージを確認してから管理上の完了を記録する。",
+      "reason": "追加依頼により、同じ環境でCDKのdeploy・API操作・destroyまで実装検証する。",
+      "next": "",
       "createdAt": "2026-11-12T00:32:40.989Z",
-      "updatedAt": "2026-11-12T00:42:49.075Z"
+      "updatedAt": "2026-11-12T01:04:38.210Z"
     }
   },
   "checkpoints": {},
@@ -919,6 +926,163 @@
           "next": "PR #2のレビューとマージを確認してから管理上の完了を記録する。",
           "createdAt": "2026-11-12T00:32:40.989Z",
           "updatedAt": "2026-11-12T00:42:49.075Z"
+        }
+      }
+    },
+    "aws-emulator-cdk-start-20261112": {
+      "id": "aws-emulator-cdk-start-20261112",
+      "hash": "cc657629a9bda3751d1b4642e268988a2123d4275f9cad9402153eae04cdf00c",
+      "actor": "agent:codex",
+      "command": "task start",
+      "taskId": "aws-emulator-setup",
+      "revision": 21,
+      "at": "2026-11-12T00:52:10.120Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。",
+          "state": "running",
+          "version": 7,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            }
+          ],
+          "result": null,
+          "reason": "追加依頼により、同じ環境でCDKのdeploy・API操作・destroyまで実装検証する。",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:52:10.120Z"
+        }
+      }
+    },
+    "aws-emulator-cdk-scope-20261112": {
+      "id": "aws-emulator-cdk-scope-20261112",
+      "hash": "c5e69165e99d126a95cd9e588cd429780d157a660299a8defd87a34cd79ad54e",
+      "actor": "agent:codex",
+      "command": "task update",
+      "taskId": "aws-emulator-setup",
+      "revision": 22,
+      "at": "2026-11-12T00:52:10.180Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版とCLIサンプルを配置済み。追加依頼によりcdk/にS3・DynamoDB・SQSを定義し、ローカルへのCDK deploy、作成したリソースのAPI往復、CDK destroyと削除を実際に検証する。既存の接続設定分離と別ポート動作を保つ。管理root=/Users/const/sori883/poc-room、project=default、ブランチcodex/aws-emulator-setup、PR #2、統合先origin/main。PRを更新し、マージ状態を実態どおり記録する。",
+          "state": "running",
+          "version": 8,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            }
+          ],
+          "result": null,
+          "reason": "追加依頼により、同じ環境でCDKのdeploy・API操作・destroyまで実装検証する。",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T00:52:10.180Z"
+        }
+      }
+    },
+    "aws-emulator-cdk-artifact-20261112": {
+      "id": "aws-emulator-cdk-artifact-20261112",
+      "hash": "7921cafa2cf83c32a1052acb371a43d5d4b4b4ed081d6f3f22b4f4e9517bd3c6",
+      "actor": "agent:codex",
+      "command": "artifact add",
+      "taskId": "aws-emulator-setup",
+      "revision": 23,
+      "at": "2026-11-12T01:04:38.210Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "poc-room直下のaws-emulator/に公式Docker版とCLIサンプルを配置済み。追加依頼によりcdk/にS3・DynamoDB・SQSを定義し、ローカルへのCDK deploy、作成したリソースのAPI往復、CDK destroyと削除を実際に検証する。既存の接続設定分離と別ポート動作を保つ。管理root=/Users/const/sori883/poc-room、project=default、ブランチcodex/aws-emulator-setup、PR #2、統合先origin/main。PRを更新し、マージ状態を実態どおり記録する。",
+          "state": "running",
+          "version": 9,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            },
+            {
+              "id": "cdk-playground",
+              "ref": "aws-emulator/cdk/README.md",
+              "description": "標準CDK bootstrap・deploy・API検証・destroyを確認。9297と9300で成功。CDK CLI 2.1148.1 / aws-cdk-lib 2.276.0。9297にはスタックを再デプロイ済み。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T01:04:38.210Z"
+            }
+          ],
+          "result": null,
+          "reason": "追加依頼により、同じ環境でCDKのdeploy・API操作・destroyまで実装検証する。",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T01:04:38.210Z"
         }
       }
     }

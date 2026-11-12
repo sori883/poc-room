@@ -44,3 +44,29 @@ Memory CLIの形式検証は成功。CLIが生成した知識ファイルのYAML
 Intel/AMD用のパッケージ選択は実装したが、実機検証はArmのみ。Node.js・Java等のSDKそのものは今回実行していない。すべてのAWSサービスやIAMポリシー評価の互換性を保証するものではない。
 
 通常用の9297を起動した状態で引き渡す。検証用の9300は停止済み。PRとマージの実状態はTasksの成果物参照・状態に記録する。
+
+## CDK対応の追加検証（2026-11-12）
+
+`aws-emulator/cdk/` にCDKアプリを追加。標準のDefaultStackSynthesizerを使い、S3バケット、DynamoDBテーブル、SQSキューを `PocRoomEmulatorDemo` に定義した。既存の接続設定分離を `./emulator cdk` でも使用し、CDKアプリはHTTPSの127.0.0.1以外の接続設定を拒否する。
+
+Node.js 24.22.1、CDK CLI 2.1148.1（fcf5e34）、aws-cdk-lib 2.276.0、constructs 10.8.1を使用。依存関係はpackage-lock.jsonで固定し、`npm ci --ignore-scripts --no-audit --no-fund` でも再インストールに成功した。
+
+| 確認 | 結果 |
+| --- | --- |
+| `cdk synth` | 3リソース、削除方針Delete、3つのOutputsを生成 |
+| 標準の `cdk bootstrap` | `CDKToolkit` がCREATE_COMPLETE、bootstrap version 33 |
+| 標準の `cdk deploy` | テンプレートのS3アップロードとCloudFormationの変更セット実行を経て成功 |
+| `cdk-test` | CloudFormation Outputsでリソースを特定し、S3内容、DynamoDB項目、SQS本文・MessageIdを照合して成功 |
+| 検証の再実行 | 2回連続で成功。検証データを削除してスタックを保持 |
+| 同一定義の再デプロイ | no changesで成功 |
+| `cdk destroy --force` | スタック削除が成功し、バケット404、テーブルResourceNotFoundException、キューNonExistentQueueを確認 |
+| 未デプロイ時の `cdk-test` | CloudFormationのdoes not existで失敗 |
+| 別ポート9300 | bootstrap、deploy、3サービスの検証に成功。9297と異なる物理リソース名 |
+| 停止中のポート9399 | CDK実行前の接続確認で拒否 |
+| AWS接続設定なしのアプリ直接実行 | ローカル用コマンドを使うようエラーを返す |
+| CLIオプション | `cdk --version` と `cdk --help` を転送 |
+| 構文・生成物 | PythonとJavaScript構文、実装差分空白を確認。node_modulesとcdk.outはGit管理外 |
+
+AWS EmulatorやCDK本体へのパッチ、独自のCloudFormation実装は不要だった。S3バケットを空にするLambdaカスタムリソースも追加していない。検証は自分で書き込んだデータだけを削除し、利用者が追加したS3オブジェクトはdestroy前に利用者が整理する。
+
+Lambdaコード・コンテナイメージなどのアセットを持つアプリ、実際のAWSへのデプロイは未検証。通常用9297にはCDKスタックを再デプロイした状態で引き渡し、9300は停止する。PR #2を更新し、マージ待ちとして記録する。

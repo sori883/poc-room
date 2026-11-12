@@ -119,9 +119,16 @@ def main():
     for name in ("aws", "run"):
         command = commands.add_parser(name, help="ローカル接続設定でコマンドを実行")
         command.add_argument("args", nargs=argparse.REMAINDER)
+    cdk = commands.add_parser("cdk", add_help=False, help="cdk/のスタックをローカルのエミュレーターにデプロイ")
+    cdk.add_argument("args", nargs=argparse.REMAINDER)
+    commands.add_parser("cdk-test", help="CDKが作成したS3・DynamoDB・SQSを実操作で検証")
     demo = commands.add_parser("demo", help="S3・DynamoDB・SQSの実操作を検証")
     demo.add_argument("service", choices=("all", "s3", "dynamodb", "sqs"), default="all", nargs="?")
-    args = parser.parse_args()
+    args, extra = parser.parse_known_args()
+    if args.command == "cdk":
+        args.args = extra + args.args
+    elif extra:
+        parser.error(f"未対応の引数です: {' '.join(extra)}")
     if not 1024 <= args.port <= 65535:
         parser.error("port は1024〜65535で指定してください。")
     emulator = Emulator(args.port)
@@ -144,6 +151,15 @@ def main():
         require("aws")
         run([sys.executable, str(ROOT / "examples" / "smoke.py"), args.service],
             env=emulator.environment())
+    elif args.command == "cdk":
+        require("node")
+        cdk = ROOT / "cdk" / "node_modules" / "aws-cdk" / "bin" / "cdk"
+        if not cdk.is_file():
+            raise RuntimeError("先に npm --prefix aws-emulator/cdk ci を実行してください（リポジトリ直下の場合）。")
+        run(["node", str(cdk), *args.args], cwd=ROOT / "cdk", env=emulator.environment())
+    elif args.command == "cdk-test":
+        require("aws")
+        run([sys.executable, str(ROOT / "cdk" / "verify.py")], env=emulator.environment())
     else:
         if not args.args:
             parser.error(f"{args.command} に実行するコマンドを指定してください。")

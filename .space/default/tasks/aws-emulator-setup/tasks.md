@@ -3,19 +3,15 @@
 # AWS Emulatorのローカル実験環境を追加する
 
 - タスク ID `aws-emulator-setup`
-- 状態 待ち（waiting）
+- 状態 作業中（running）
 - 試行 1
-- 版 6
-- 更新日時 2026-11-12T00:42:49.075Z
+- 版 9
+- 更新日時 2026-11-12T01:04:38.210Z
 
 ## 内容
 
-poc-room直下のaws-emulator/に公式Docker版の起動・停止・接続設定とS3/DynamoDB/SQSのサンプルを分離して追加する。実際に起動し、API操作、再実行、停止・再起動を検証する。管理root=/Users/const/sori883/poc-room、project=default、開始main、統合先origin/main。ローカル実装と検証を進め、PRとの紐付けとマージ状態は実態を記録する。
+poc-room直下のaws-emulator/に公式Docker版とCLIサンプルを配置済み。追加依頼によりcdk/にS3・DynamoDB・SQSを定義し、ローカルへのCDK deploy、作成したリソースのAPI往復、CDK destroyと削除を実際に検証する。既存の接続設定分離と別ポート動作を保つ。管理root=/Users/const/sori883/poc-room、project=default、ブランチcodex/aws-emulator-setup、PR \#2、統合先origin/main。PRを更新し、マージ状態を実態どおり記録する。
 
 ## 理由
 
-専用フォルダへの実装と実機検証が完了し、Draft PR \#2を作成。mainへのマージは未実施。通常用9297は起動中、検証用9300は停止済み。
-
-## 次の操作
-
-PR \#2のレビューとマージを確認してから管理上の完了を記録する。
+追加依頼により、同じ環境でCDKのdeploy・API操作・destroyまで実装検証する。

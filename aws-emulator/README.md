@@ -29,6 +29,19 @@ MacではDocker Desktopを起動してください。Apple SiliconとIntel/AMD�
 ./emulator demo sqs
 ```
 
+## CDKからデプロイする
+
+CDKでS3・DynamoDB・SQSをまとめて作成するサンプルもあります。Node.js 22以上とnpmを用意し、このフォルダで実行します。
+
+```sh
+npm --prefix cdk ci
+./emulator cdk bootstrap aws://000000000000/us-east-1
+./emulator cdk deploy PocRoomEmulatorDemo --require-approval never
+./emulator cdk-test
+```
+
+エミュレーターを再起動した後は、`up` と `bootstrap` から実行します。定義の編集、削除、別ポートの手順は[CDKのREADME](cdk/README.md)を参照してください。
+
 ## AWS CLIを使う
 
 ```sh
@@ -95,6 +108,7 @@ aws-emulator/
 ├── emulator            # 起動・停止・AWS CLI・アプリの実行
 ├── examples/
 │   └── smoke.py        # S3・DynamoDB・SQSのAPIサンプル
+├── cdk/                # CDK定義・デプロイ手順・作成後のAPI検証
 └── .runtime/           # 実行時の認証情報と証明書（Git管理外）
 ```
 
