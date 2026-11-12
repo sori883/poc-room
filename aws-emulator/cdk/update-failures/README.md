@@ -93,4 +93,4 @@ RDSだけは [../rds-rollback/app.mjs](../rds-rollback/app.mjs) を使います�
 - [EBSの変更制限](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html)
 - [DynamoDBのGSI更新制限](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-dynamodb-table.html)
 - [Object Lock有効後の制限](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html)
-- [実行ログとAPI応答](../../../.space/default/tasks/aws-emulator-setup/evidence/)
+- [実行ログとAPI応答](../../../.space/default/tasks/.archive/aws-emulator-setup/evidence/)

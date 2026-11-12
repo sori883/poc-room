@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectId": "default",
   "storeId": "df5eeba7-7293-4e52-b6d1-c41ae26df12c",
-  "revision": 29,
+  "revision": 31,
   "tasks": {
     "meta-astryx-homepage": {
       "id": "meta-astryx-homepage",
@@ -86,8 +86,8 @@
       "id": "aws-emulator-setup",
       "title": "AWS Emulatorのローカル実験環境を追加する",
       "description": "AWS EmulatorとCDK環境を追加済み。追加依頼はCDKのソース変更だけで更新デプロイが失敗するケースの実測。RDS縮小は未実装エラーでrollbackとなったため、EBS縮小、S3 Object Lockバケットのversioning停止、DynamoDB複数GSI追加などへ検証を広げる。各ケースの正常初回デプロイ、synth、更新結果、実リソースとロールバックを確認し、AWS制約・未実装・誤った成功を区別する。手動変更や外部障害注入なし。ポート9300で隔離し後片付けする。root=/Users/const/sori883/poc-room、project=default、branch=codex/aws-emulator-setup、PR #2、実AWSは操作しない。",
-      "state": "waiting",
-      "version": 15,
+      "state": "completed",
+      "version": 17,
       "attempt": 1,
       "dependencies": [],
       "inputs": {},
@@ -102,7 +102,7 @@
         },
         {
           "id": "verification",
-          "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+          "ref": ".space/default/tasks/.archive/aws-emulator-setup/verification.md",
           "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
           "attempt": 1,
           "createdAt": "2026-11-12T00:41:06.685Z"
@@ -129,11 +129,13 @@
           "createdAt": "2026-11-12T03:42:35.330Z"
         }
       ],
-      "result": null,
-      "reason": "CDKソース変更のみの6ケースを実測し、証拠と再現用アプリをPR #2へ反映済み。固定名テーブルのID変更で名前衝突とロールバックを確認。RDS/EBS/DynamoDBの一部は未実装、S3 Object Lockは再現不足と判定。対照実験、構文・記録照合、全リソース削除と9300停止を確認。mainは未マージ。",
-      "next": "PR #2のレビューとマージを確認する。実AWSの容量縮小制約・Object Lock・データ保全は今回の結果では保証しない。",
+      "result": "ユーザーの承認によりPR https://github.com/sori883/poc-room/pull/2 を2026-11-12 13:45 JSTにmainへマージ。merge commit fe2a5d518f9a5c15ea9c84e1b8ce9b474990d9de、検証対象head 13e4c514a8aed12c6834cc4aea20c80595c55d29。マージ後のaws-emulatorコードが検証済みheadと同一であることを確認。公式Docker版、CLI/CDK基本操作、6種類の更新失敗と対照実験、検証環境の削除を実測済み。GitHub上のCIチェックは未設定。RDS/EBS等の未実装やObject Lockの再現不足はREADME・証拠に記録し、実AWS互換性やデータ保全の保証とは区別した。ローカルmainも同期済み。",
+      "reason": "",
+      "next": "",
       "createdAt": "2026-11-12T00:32:40.989Z",
-      "updatedAt": "2026-11-12T03:44:16.211Z"
+      "updatedAt": "2026-11-12T04:46:10.841Z",
+      "archived": true,
+      "archiveRoot": ".archive"
     }
   },
   "checkpoints": {},
@@ -1446,6 +1448,136 @@
           "next": "PR #2のレビューとマージを確認する。実AWSの容量縮小制約・Object Lock・データ保全は今回の結果では保証しない。",
           "createdAt": "2026-11-12T00:32:40.989Z",
           "updatedAt": "2026-11-12T03:44:16.211Z"
+        }
+      }
+    },
+    "aws-emulator-merge-confirmed-20261112": {
+      "id": "aws-emulator-merge-confirmed-20261112",
+      "hash": "de161f510c72fa05e06fc76ce909ed2e0d869d8c5863ca98b6f355c40a385d94",
+      "actor": "unspecified",
+      "command": "task start",
+      "taskId": "aws-emulator-setup",
+      "revision": 30,
+      "at": "2026-11-12T04:46:10.777Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "AWS EmulatorとCDK環境を追加済み。追加依頼はCDKのソース変更だけで更新デプロイが失敗するケースの実測。RDS縮小は未実装エラーでrollbackとなったため、EBS縮小、S3 Object Lockバケットのversioning停止、DynamoDB複数GSI追加などへ検証を広げる。各ケースの正常初回デプロイ、synth、更新結果、実リソースとロールバックを確認し、AWS制約・未実装・誤った成功を区別する。手動変更や外部障害注入なし。ポート9300で隔離し後片付けする。root=/Users/const/sori883/poc-room、project=default、branch=codex/aws-emulator-setup、PR #2、実AWSは操作しない。",
+          "state": "running",
+          "version": 16,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            },
+            {
+              "id": "cdk-playground",
+              "ref": "aws-emulator/cdk/README.md",
+              "description": "標準CDK bootstrap・deploy・API検証・destroyを確認。9297と9300で成功。CDK CLI 2.1148.1 / aws-cdk-lib 2.276.0。9297にはスタックを再デプロイ済み。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T01:04:38.210Z"
+            },
+            {
+              "id": "update-failure-experiments",
+              "ref": "aws-emulator/cdk/update-failures/README.md",
+              "description": "CDKソース変更だけの更新失敗を6ケース実測。固定名DynamoDBのID変更は名前衝突でロールバック。RDS・EBS等は未実装エラー、S3 Object Lockは設定の再現不足。対照実験と削除確認を実施。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T03:42:35.330Z"
+            }
+          ],
+          "result": null,
+          "reason": "ユーザーのマージ承認によりPR #2をmainへマージ済み。マージコミットfe2a5d518f9a5c15ea9c84e1b8ce9b474990d9deをAPIとローカルorigin/mainで確認し、検証対象のaws-emulatorコードとの差分なしを確認。完了記録を保存する。",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T04:46:10.777Z"
+        }
+      }
+    },
+    "aws-emulator-complete-20261112": {
+      "id": "aws-emulator-complete-20261112",
+      "hash": "c97e9b4a07ac94e49b606ecfc947c3c922e498970efcca3c26303563bb76e1ed",
+      "actor": "unspecified",
+      "command": "task complete",
+      "taskId": "aws-emulator-setup",
+      "revision": 31,
+      "at": "2026-11-12T04:46:10.841Z",
+      "data": {
+        "task": {
+          "id": "aws-emulator-setup",
+          "title": "AWS Emulatorのローカル実験環境を追加する",
+          "description": "AWS EmulatorとCDK環境を追加済み。追加依頼はCDKのソース変更だけで更新デプロイが失敗するケースの実測。RDS縮小は未実装エラーでrollbackとなったため、EBS縮小、S3 Object Lockバケットのversioning停止、DynamoDB複数GSI追加などへ検証を広げる。各ケースの正常初回デプロイ、synth、更新結果、実リソースとロールバックを確認し、AWS制約・未実装・誤った成功を区別する。手動変更や外部障害注入なし。ポート9300で隔離し後片付けする。root=/Users/const/sori883/poc-room、project=default、branch=codex/aws-emulator-setup、PR #2、実AWSは操作しない。",
+          "state": "completed",
+          "version": 17,
+          "attempt": 1,
+          "dependencies": [],
+          "inputs": {},
+          "workspace": null,
+          "artifacts": [
+            {
+              "id": "local-setup",
+              "ref": "aws-emulator/README.md",
+              "description": "専用フォルダのDocker構成、CLI、実操作サンプル、起動・停止・SDK接続手順。Arm実機で起動と全サンプルを検証。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:40:48.586Z"
+            },
+            {
+              "id": "verification",
+              "ref": ".space/default/tasks/.archive/aws-emulator-setup/verification.md",
+              "description": "実ビルド、API往復、再実行、停止・再起動、別ポート、接続設定分離の検証結果。AWS Emulator 1.0.322 / Apple Silicon。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:41:06.685Z"
+            },
+            {
+              "id": "pull-request",
+              "ref": "https://github.com/sori883/poc-room/pull/2",
+              "description": "codex/aws-emulator-setupからmainへのDraft PR。ローカルの実装・実操作検証は完了。未マージ。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T00:42:49.009Z"
+            },
+            {
+              "id": "cdk-playground",
+              "ref": "aws-emulator/cdk/README.md",
+              "description": "標準CDK bootstrap・deploy・API検証・destroyを確認。9297と9300で成功。CDK CLI 2.1148.1 / aws-cdk-lib 2.276.0。9297にはスタックを再デプロイ済み。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T01:04:38.210Z"
+            },
+            {
+              "id": "update-failure-experiments",
+              "ref": "aws-emulator/cdk/update-failures/README.md",
+              "description": "CDKソース変更だけの更新失敗を6ケース実測。固定名DynamoDBのID変更は名前衝突でロールバック。RDS・EBS等は未実装エラー、S3 Object Lockは設定の再現不足。対照実験と削除確認を実施。",
+              "attempt": 1,
+              "createdAt": "2026-11-12T03:42:35.330Z"
+            }
+          ],
+          "result": "ユーザーの承認によりPR https://github.com/sori883/poc-room/pull/2 を2026-11-12 13:45 JSTにmainへマージ。merge commit fe2a5d518f9a5c15ea9c84e1b8ce9b474990d9de、検証対象head 13e4c514a8aed12c6834cc4aea20c80595c55d29。マージ後のaws-emulatorコードが検証済みheadと同一であることを確認。公式Docker版、CLI/CDK基本操作、6種類の更新失敗と対照実験、検証環境の削除を実測済み。GitHub上のCIチェックは未設定。RDS/EBS等の未実装やObject Lockの再現不足はREADME・証拠に記録し、実AWS互換性やデータ保全の保証とは区別した。ローカルmainも同期済み。",
+          "reason": "",
+          "next": "",
+          "createdAt": "2026-11-12T00:32:40.989Z",
+          "updatedAt": "2026-11-12T04:46:10.841Z",
+          "archived": true,
+          "archiveRoot": ".archive"
         }
       }
     }

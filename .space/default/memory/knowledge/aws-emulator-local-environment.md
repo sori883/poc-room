@@ -14,10 +14,10 @@ code_refs:
   - aws-emulator/cdk/update-failures/app.mjs
 sources: 
   - resource: https://docs.aws.amazon.com/emulator/latest/userguide/getting-started-docker.html
-  - resource: .space/default/tasks/aws-emulator-setup/verification.md
+  - resource: .space/default/tasks/.archive/aws-emulator-setup/verification.md
 generated: 
   by: agent:codex
-  at: 2026-11-12T03:42:15.017Z
+  at: 2026-11-12T04:46:10.990Z
 ---
 # ローカル実験環境
 
